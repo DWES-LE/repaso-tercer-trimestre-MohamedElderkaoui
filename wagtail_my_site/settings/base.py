@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # "demo",
     # my apps
     "blog.apps.BlogConfig",
+    "person.apps.PersonConfig",
 ]
 
 MIDDLEWARE = [

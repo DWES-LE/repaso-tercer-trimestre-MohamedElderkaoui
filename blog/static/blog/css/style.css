@@ -18,3 +18,9 @@
 wagtail-userbar::part(userbar) {
     bottom: 30px;
 }
+   table.month {
+            margin: 20px;
+        }
+        table.month td, table.month th {
+            padding: 5px;
+        }

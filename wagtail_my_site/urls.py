@@ -7,6 +7,8 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
+from blog import urls as blog_urls
+from person import urls as person_urls
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -16,6 +18,9 @@ urlpatterns = [
     
     # my apps
     # path("blog/", include("blog.urls")),
+    path("blog/", include("blog.urls", namespace="blog")),
+    # person
+    path("person/", include("person.urls", namespace="person")),
 ]
 
 

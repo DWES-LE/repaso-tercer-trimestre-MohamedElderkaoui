@@ -431,3 +431,26 @@ class MemberFilterSet(WagtailFilterSet):
     class Meta:
         model = Member
         fields = ["shirt_size"]
+        
+class CommonContentBlock(blocks.StreamBlock):
+    heading = blocks.CharBlock(form_classname="title")
+    paragraph = blocks.RichTextBlock()
+    image = ImageChooserBlock()
+
+
+class BlogPage(Page):
+    body = StreamField(CommonContentBlock(), use_json_field=True)
+
+import datetime
+
+class EventBlock(blocks.StructBlock):
+    title = blocks.CharBlock()
+    date = blocks.DateBlock()
+
+    def get_context(self, value, parent_context=None):
+        context = super().get_context(value, parent_context=parent_context)
+        context['is_happening_today'] = (value['date'] == datetime.date.today())
+        return context
+
+    class Meta:
+        template = 'myapp/blocks/event.html'
