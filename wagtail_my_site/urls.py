@@ -16,11 +16,7 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     
-    # my apps
-    # path("blog/", include("blog.urls")),
-    path("blog/", include("blog.urls", namespace="blog")),
-    # person
-    path("person/", include("person.urls", namespace="person")),
+  
 ]
 
 
