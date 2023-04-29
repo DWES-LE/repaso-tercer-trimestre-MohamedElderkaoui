@@ -15,3 +15,16 @@ class HomePage(Page):
         FieldPanel('video'),
         FieldPanel('image'),
         ]
+class home(models.Model):
+    title = models.CharField(max_length=255)
+    body = RichTextField(blank=True)
+    video = models.FileField( blank=True)
+    image = models.ImageField( blank=True)
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('body'),
+        FieldPanel('video'),
+        FieldPanel('image'),
+        ]
+    def __str__(self):
+        return self.title

@@ -44,24 +44,14 @@
                 -media
                 para movil, para pc se expande
                 con bootstrap 
+                {% load wagtailcore_tags %}
+...
+<a href="{% pageurl page.get_parent %}">Back to index</a>
               -->
+                         
            
         {% wagtailuserbar %}
-        <div class="container">
-             <div class="container-fluid">
-                <div class="row">
-                    <div class="col">
-                        <a class="navbar-brand" href="#">Persona</a>
-                    </div>
-                    <div class="col">
-                        <a class="navbar-brand" href="#">Blog</a>
-                    </div>
-                    <div class="col">
-                        <a class="navbar-brand" href="#">Media</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         </nav>
         
         {% block content %}{% endblock %}
