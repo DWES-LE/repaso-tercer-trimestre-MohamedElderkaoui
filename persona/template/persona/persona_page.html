@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+  <article>
+    <header>
+      <h1>{{ page.nombre }} {{ page.apellidos }}</h1>
+      <p>{{ page.fecha_nacimiento }} | {{ page.lugar_nacimiento }}</p>
+    </header>
+    {% if page.main_image %}
+      <img src="{{ page.main_image.url }}" alt="{{ page.main_image.alt }}" />
+    {% endif %}
+    <section>
+      {{ page.biografia }}
+    </section>
+    <footer>
+      <ul class="social-links">
+        {% if page.twitter %}
+          <li><a href="{{ page.twitter }}">Twitter</a></li>
+        {% endif %}
+        {% if page.facebook %}
+          <li><a href="{{ page.facebook }}">Facebook</a></li>
+        {% endif %}
+        {% if page.instagram %}
+          <li><a href="{{ page.instagram }}">Instagram</a></li>
+        {% endif %}
+      </ul>
+    </footer>
+  </article>
+{% endblock %}
