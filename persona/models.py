@@ -3,6 +3,22 @@ from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel
 from django.db import models
 from wagtail.search import index
+from django.db import models
+
+# New imports added for ClusterTaggableManager, TaggedItemBase, MultiFieldPanel
+
+from modelcluster.fields import ParentalKey
+from modelcluster.contrib.taggit import ClusterTaggableManager
+from taggit.models import TaggedItemBase
+
+from wagtail.models import Page, Orderable
+from wagtail.fields import RichTextField
+from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.search import index
+
+from blog.models import BlogPageTag
+
+
 # Create your models here.
 """Nueva aplicación
 La nueva aplicación recogerá información de personas (actores, deportistas, elige el tema) y la mostrará en una página web.
@@ -35,6 +51,7 @@ class Persona(Page):
     linkedin = models.URLField(blank=True)
     body = RichTextField(blank=True)
     into = RichTextField(blank=True)
+    tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     
     
     search_fields = Page.search_fields + [
@@ -73,3 +90,60 @@ class Persona(Page):
         
     def __str__(self):
         return self.nombre + " " + self.apellidos
+    
+class PersonaIndex(Page):
+    intro = RichTextField(blank=True)
+    
+    content_panels = Page.content_panels + [
+        FieldPanel("intro", classname="full"),
+    ]
+    
+    subpage_types = ["Persona"]
+    
+    def personas(self):
+        return Persona.objects.live().descendant_of(self)
+    
+    class Meta:
+        verbose_name = "Página de personas"
+        verbose_name_plural = "Páginas de personas"
+        
+    def __str__(self):
+        return self.title
+class PersonaCategoria(Page):
+    intro = RichTextField(blank=True)
+    
+    content_panels = Page.content_panels + [
+        FieldPanel("intro", classname="full"),
+    ]
+    
+    subpage_types = ["Persona"]
+    
+    def personas(self):
+        return Persona.objects.live().descendant_of(self)
+    
+    class Meta:
+        verbose_name = "Página de categorias"
+        verbose_name_plural = "Páginas de categorias"
+        
+    def __str__(self):
+        return self.title
+
+# lista de personas
+class PersonaList(Page):
+    intro = RichTextField(blank=True)
+    
+    content_panels = Page.content_panels + [
+        FieldPanel("intro", classname="full"),
+    ]
+    
+    subpage_types = ["Persona"]
+    
+    def personas(self):
+        return Persona.objects.live().descendant_of(self)
+    
+    class Meta:
+        verbose_name = "Página de listado de personas"
+        verbose_name_plural = "Páginas de listado de personas"
+        
+    def __str__(self):
+        return self.title

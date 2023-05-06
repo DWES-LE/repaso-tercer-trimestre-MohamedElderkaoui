@@ -39,19 +39,20 @@
          -->
          <nav>
             <!--
-                -persona 
-                -blog
-                -media
+                -persona/ 
+                -blog/
+                -media/
                 para movil, para pc se expande
                 con bootstrap 
-                {% load wagtailcore_tags %}
-...
-<a href="{% pageurl page.get_parent %}">Back to index</a>
               -->
                          
            
         {% wagtailuserbar %}
-        
+        <div class="container">
+            <a class="navbar-brand" href="{% slugurl 'home' %}">Home</a>
+            <a class="navbar-brand" href="{% slugurl 'persona' %}">Personas</a>
+            <a class="navbar-brand" href="{% slugurl 'blog' %}">Blog</a>
+            <a class="navbar-brand" href="{% slugurl 'media' %}">Media</a>
         </nav>
         
         {% block content %}{% endblock %}
