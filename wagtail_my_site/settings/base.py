@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     # persona
     "persona.apps.PersonaConfig",
+    
 ]
 
 MIDDLEWARE = [
