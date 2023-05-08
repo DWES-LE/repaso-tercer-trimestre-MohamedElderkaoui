@@ -1,0 +1,635 @@
+[
+{
+  "model": "wagtailsearch.sqliteftsindexentry",
+  "pk": 1,
+  "fields": {
+    "autocomplete": "fsaz",
+    "title": "fsaz",
+    "body": "mohamed merzouk 2023-05-03 rfs trfdtfd    "
+  }
+},
+{
+  "model": "wagtailsearch.indexentry",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "object_id": "3",
+    "title_norm": 1.0,
+    "autocomplete": "fsaz",
+    "title": "fsaz",
+    "body": "mohamed merzouk 2023-05-03 rfs trfdtfd    "
+  }
+},
+{
+  "model": "wagtailcore.locale",
+  "pk": 1,
+  "fields": {
+    "language_code": "es"
+  }
+},
+{
+  "model": "wagtailcore.site",
+  "pk": 1,
+  "fields": {
+    "hostname": "localhost",
+    "port": 80,
+    "site_name": "",
+    "root_page": 2,
+    "is_default_site": true
+  }
+},
+{
+  "model": "wagtailcore.collection",
+  "pk": 1,
+  "fields": {
+    "path": "0001",
+    "depth": 1,
+    "numchild": 0,
+    "name": "Root"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "wagtailcore",
+      "pagesubscription"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "pagesubscription"
+    ],
+    "object_id": "1",
+    "to_content_type": [
+      "auth",
+      "user"
+    ],
+    "to_object_id": "1",
+    "model_path": "user",
+    "content_path": "user",
+    "content_path_hash": "b9395e53-5243-59fd-88fa-de4156683cf8"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 2,
+  "fields": {
+    "content_type": [
+      "wagtailcore",
+      "pagesubscription"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "pagesubscription"
+    ],
+    "object_id": "1",
+    "to_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "to_object_id": "3",
+    "model_path": "page",
+    "content_path": "page",
+    "content_path_hash": "7b295380-95fa-5117-92c0-23c46a06e9b7"
+  }
+},
+{
+  "model": "wagtailcore.workflowpage",
+  "pk": 1,
+  "fields": {
+    "workflow": 1
+  }
+},
+{
+  "model": "wagtailcore.workflowtask",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "workflow": 1,
+    "task": 1
+  }
+},
+{
+  "model": "wagtailcore.task",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators approval",
+    "content_type": [
+      "wagtailcore",
+      "groupapprovaltask"
+    ],
+    "active": true
+  }
+},
+{
+  "model": "wagtailcore.workflow",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators approval",
+    "active": true
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators",
+    "permissions": [
+      [
+        "access_admin",
+        "wagtailadmin",
+        "admin"
+      ],
+      [
+        "add_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "change_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "choose_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "delete_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "add_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "change_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "choose_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "delete_image",
+        "wagtailimages",
+        "image"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "Editors",
+    "permissions": [
+      [
+        "access_admin",
+        "wagtailadmin",
+        "admin"
+      ],
+      [
+        "add_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "change_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "choose_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "delete_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "add_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "change_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "choose_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "delete_image",
+        "wagtailimages",
+        "image"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$GsMaJY2kjEzuPI0O9Rpheh$PE/wpMrWmgXbDY802C8m5D/jWGAkf6ian7dpZnrj0UU=",
+    "last_login": "2023-05-08T14:51:31.704Z",
+    "is_superuser": true,
+    "username": "mohamed",
+    "first_name": "",
+    "last_name": "",
+    "email": "mderkaoui10@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-05-08T14:50:55.881Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "persona.persona",
+  "pk": 3,
+  "fields": {
+    "nombre": "mohamed",
+    "apellidos": "merzouk",
+    "fecha_nacimiento": "2023-05-03",
+    "lugar_nacimiento": "rfs",
+    "biografia": "<p data-block-key=\"dwdec\">trfdtfd</p>",
+    "foto": "persona/Sin_título_F4Gow8L.jpg",
+    "twitter": "",
+    "facebook": "",
+    "instagram": "",
+    "linkedin": "",
+    "body": "",
+    "into": ""
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "mohamed"
+    ],
+    "page": 3,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "label": "fsaz",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2023-05-08T14:53:08.006Z",
+    "uuid": "0fcdb116-754a-4f59-8b06-6a33f0726566",
+    "user": [
+      "mohamed"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 2,
+  "fields": {
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "label": "fsaz",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2023-05-08T14:53:08.098Z",
+    "uuid": "0fcdb116-754a-4f59-8b06-6a33f0726566",
+    "user": [
+      "mohamed"
+    ],
+    "revision": 1,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 3,
+  "fields": {
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "label": "fsaz",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2023-05-08T14:53:15.351Z",
+    "uuid": "7af6a340-2f15-484a-9167-55637737ef26",
+    "user": [
+      "mohamed"
+    ],
+    "revision": 2,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 4,
+  "fields": {
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "label": "fsaz",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2023-05-08T14:53:15.442Z",
+    "uuid": "7af6a340-2f15-484a-9167-55637737ef26",
+    "user": [
+      "mohamed"
+    ],
+    "revision": 2,
+    "content_changed": false,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.groupapprovaltask",
+  "pk": 1,
+  "fields": {
+    "groups": [
+      [
+        "Moderators"
+      ]
+    ]
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "3",
+    "submitted_for_moderation": false,
+    "created_at": "2023-05-08T14:53:08.046Z",
+    "user": [
+      "mohamed"
+    ],
+    "object_str": "mohamed merzouk",
+    "content": {
+      "pk": 3,
+      "path": "000100010001",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "43198ba4-8b93-438a-88aa-37f9284ba42c",
+      "locale": 1,
+      "latest_revision": null,
+      "live": false,
+      "has_unpublished_changes": false,
+      "first_published_at": null,
+      "last_published_at": null,
+      "live_revision": null,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "fsaz",
+      "draft_title": "fsaz",
+      "slug": "fsaz",
+      "content_type": 51,
+      "url_path": "/home/fsaz/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": null,
+      "alias_of": null,
+      "nombre": "mohamed",
+      "apellidos": "merzouk",
+      "fecha_nacimiento": "2023-05-03",
+      "lugar_nacimiento": "rfs",
+      "biografia": "<p data-block-key=\"dwdec\">trfdtfd</p>",
+      "foto": "persona/Sin_título_F4Gow8L.jpg",
+      "twitter": "",
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "",
+      "body": "",
+      "into": "",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 2,
+  "fields": {
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "3",
+    "submitted_for_moderation": false,
+    "created_at": "2023-05-08T14:53:15.318Z",
+    "user": [
+      "mohamed"
+    ],
+    "object_str": "mohamed merzouk",
+    "content": {
+      "pk": 3,
+      "path": "000100010001",
+      "depth": 3,
+      "numchild": 0,
+      "translation_key": "43198ba4-8b93-438a-88aa-37f9284ba42c",
+      "locale": 1,
+      "latest_revision": 1,
+      "live": false,
+      "has_unpublished_changes": true,
+      "first_published_at": null,
+      "last_published_at": null,
+      "live_revision": null,
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "title": "fsaz",
+      "draft_title": "fsaz",
+      "slug": "fsaz",
+      "content_type": 51,
+      "url_path": "/home/fsaz/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": false,
+      "search_description": "",
+      "latest_revision_created_at": "2023-05-08T14:53:08.046Z",
+      "alias_of": null,
+      "nombre": "mohamed",
+      "apellidos": "merzouk",
+      "fecha_nacimiento": "2023-05-03",
+      "lugar_nacimiento": "rfs",
+      "biografia": "<p data-block-key=\"dwdec\">trfdtfd</p>",
+      "foto": "persona/Sin_título_F4Gow8L.jpg",
+      "twitter": "",
+      "facebook": "",
+      "instagram": "",
+      "linkedin": "",
+      "body": "",
+      "into": "",
+      "wagtail_admin_comments": []
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 1,
+  "fields": {
+    "path": "0001",
+    "depth": 1,
+    "numchild": 1,
+    "translation_key": "13de9869-3324-4f1c-9634-14ec5c7c35a8",
+    "locale": 1,
+    "latest_revision": null,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Root",
+    "draft_title": "Root",
+    "slug": "root",
+    "content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "url_path": "/",
+    "owner": null,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": null,
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 2,
+  "fields": {
+    "path": "00010001",
+    "depth": 2,
+    "numchild": 1,
+    "translation_key": "e87350cf-0435-4975-89c0-7ea332191408",
+    "locale": 1,
+    "latest_revision": null,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Welcome to your new Wagtail site!",
+    "draft_title": "Welcome to your new Wagtail site!",
+    "slug": "home",
+    "content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "url_path": "/home/",
+    "owner": null,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": null,
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 3,
+  "fields": {
+    "path": "000100010001",
+    "depth": 3,
+    "numchild": 0,
+    "translation_key": "43198ba4-8b93-438a-88aa-37f9284ba42c",
+    "locale": 1,
+    "latest_revision": 2,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-05-08T14:53:15.383Z",
+    "last_published_at": "2023-05-08T14:53:15.383Z",
+    "live_revision": 2,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "fsaz",
+    "draft_title": "fsaz",
+    "slug": "fsaz",
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "url_path": "/home/fsaz/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-05-08T14:53:15.318Z",
+    "alias_of": null
+  }
+}
+]
