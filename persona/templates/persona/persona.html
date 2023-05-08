@@ -12,6 +12,13 @@
       </div>
       <div class="col-md-8">
         <h1>{{ persona.nombre }} {{ persona.apellidos }}</h1>
+
+        <!-- 
+          IMAGENES
+         -->
+        {% for imagen in persona.imagenes.all %}
+          <img class="img-fluid" src="{{ imagen.imagen.url }}" alt="{{ imagen.descripcion }}">
+        {% endfor %}
         <p><strong>Fecha de nacimiento:</strong> {{ persona.fecha_nacimiento }}</p>
         <p><strong>Lugar de nacimiento:</strong> {{ persona.lugar_nacimiento }}</p>
         <p>{{ persona.biografia }}</p>
