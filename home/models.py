@@ -8,12 +8,12 @@ from wagtail.admin.panels import FieldPanel
 class HomePage(Page):
     body = RichTextField(blank=True)
     video = models.FileField( blank=True)
-    image = models.ImageField( blank=True)
+    imagen = models.ImageField( blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('body'),
         FieldPanel('video'),
-        FieldPanel('image'),
+        FieldPanel('imagen'),
         ]
 class home(models.Model):
     title = models.CharField(max_length=255)
