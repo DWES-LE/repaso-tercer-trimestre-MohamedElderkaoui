@@ -1,0 +1,13 @@
+{% load static wagtailcore_tags wagtailuserbar %}
+
+
+                 
+           
+        {% wagtailuserbar %}
+        <div class="container">
+            <a class="navbar-brand" href="{% slugurl 'home' %}">Home</a>
+            <a class="navbar-brand" href="{% slugurl 'persona' %}">Personas</a>
+            <a class="navbar-brand" href="{% slugurl 'blog' %}">Blog</a>
+            <a class="navbar-brand" href="{% slugurl 'media' %}">Media</a>
+        </nav>
+        
