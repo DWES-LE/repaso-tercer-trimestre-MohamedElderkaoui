@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.intro }}</p>
+        {% for persona in page.personas %}
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <a href="{% pageurl persona %}">
+              <h2>{{ persona.title }}</h2>
+              {% image persona.foto width-300 %}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

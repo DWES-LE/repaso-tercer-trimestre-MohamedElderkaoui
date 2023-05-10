@@ -5,38 +5,34 @@
 {% block body_class %}template-blogpage{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <img class="img-fluid" src="{{ persona.foto.url }}" alt="{{ persona.nombre }} {{ persona.apellidos }}">
-      </div>
-      <div class="col-md-8">
-        <h1>{{ persona.nombre }} {{ persona.apellidos }}</h1>
-
-        <!-- 
-          IMAGENES
-         -->
-        {% for imagen in persona.imagenes.all %}
-          <img class="img-fluid" src="{{ imagen.imagen.url }}" alt="{{ imagen.descripcion }}">
-        {% endfor %}
-        <p><strong>Fecha de nacimiento:</strong> {{ persona.fecha_nacimiento }}</p>
-        <p><strong>Lugar de nacimiento:</strong> {{ persona.lugar_nacimiento }}</p>
-        <p>{{ persona.biografia }}</p>
-        <div class="social-links">
-          {% if persona.twitter %}
-            <a href="{{ persona.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
-          {% endif %}
-          {% if persona.facebook %}
-            <a href="{{ persona.facebook }}" target="_blank"><i class="fab fa-facebook"></i></a>
-          {% endif %}
-          {% if persona.instagram %}
-            <a href="{{ persona.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
-          {% endif %}
-          {% if persona.linkedin %}
-            <a href="{{ persona.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
-          {% endif %}
+ <!--   nombre = models.CharField(max_length=100)
+    apellidos = models.CharField(max_length=100)
+    fecha_nacimiento = models.DateField()
+    lugar_nacimiento = models.CharField(max_length=100)
+    biografia = RichTextField()
+    foto = models.ImageField(upload_to="persona")
+    twitter = models.URLField(blank=True)
+    facebook = models.URLField(blank=True)
+    instagram = models.URLField(blank=True)
+    linkedin = models.URLField(blank=True)
+    body = RichTextField(blank=True)
+    into = RichTextField(blank=True)
+    tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
+     -->
+         <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>{{ page.nombre }} {{ page.apellidos }}</h1>
+                <p>{{ page.fecha_nacimiento }}</p>
+                <p>{{ page.lugar_nacimiento }}</p>
+                <p>{{ page.biografia }}</p>
+                <img src="{{ page.foto.url }}" alt="{{ page.nombre }} {{ page.apellidos }}">
+                <p>{{ page.twitter }}</p>
+                <p>{{ page.facebook }}</p>
+                <p>{{ page.instagram }}</p>
+                <p>{{ page.linkedin }}</p>
+                <p>{{ page.body }}</p>
+                <p>{{ page.into }}</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 {% endblock %}
