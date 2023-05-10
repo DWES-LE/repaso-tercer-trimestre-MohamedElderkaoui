@@ -812,14 +812,5 @@
     "intro": "das",
     "body": "<p data-block-key=\"pga6n\">2qd</p>"
   }
-},
-{
-  "model": "persona.persona",
-  "pk": 3,
-  "fields": {
-    "nombre": "mohamed",
-    "apellidos": "merzouk",
-    "fecha_nacimiento": "2023-05-03",
-    "lugar_nacimiento": "rfs",
-    "biografia": "<p data-block-key=\"dwdec\">trfdtfd</p>",
-    "foto": 
+}
+]
