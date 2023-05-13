@@ -1,28 +1,36 @@
 {% extends "base.html" %}
 
-
-
-
 {% load wagtailcore_tags %}
-{% load wagtailimages_tags %}
 
-{% block body_class %}template-blogpage{% endblock %}
+{% block title %}
+    {{ page.title }}
+{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.intro }}</p>
-        {% for persona in page.personas %}
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="{% pageurl persona %}">
-              <h2>{{ persona.title }}</h2>
-              {% image persona.foto width-300 %}
-            </a>
-          </div>
-        {% endfor %}
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1>{{ page.title }}</h1>
+                <hr>
+                {% for persona in page.personas %}
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{ persona.foto.url }}" alt="{{ persona.nombre }}" class="img-fluid">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ persona.nombre }} {{ persona.apellidos }}</h5>
+                                    <p class="card-text">{{ persona.biografia }}</p>
+                                    <a href="{{ persona.url }}" class="btn btn-primary">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No hay personas disponibles.</p>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-  </div>
 {% endblock %}

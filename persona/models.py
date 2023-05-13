@@ -131,19 +131,15 @@ class PersonaCategoria(Page):
 # lista de personas
 class PersonaList(Page):
     intro = RichTextField(blank=True)
-    
     content_panels = Page.content_panels + [
-        FieldPanel("intro", classname="full"),
+        FieldPanel('intro', classname="full"),
+        
     ]
-    
-    subpage_types = ["Persona"]
-    
+    subpage_types = ['Persona']
     def personas(self):
         return Persona.objects.live().descendant_of(self)
-    
     class Meta:
-        verbose_name = "Página de listado de personas"
-        verbose_name_plural = "Páginas de listado de personas"
-        
+        verbose_name = "Lista de personas"
+        verbose_name_plural = "Listas de personas"
     def __str__(self):
         return self.title
