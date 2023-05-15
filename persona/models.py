@@ -91,6 +91,7 @@ class Persona(Page):
     def __str__(self):
         return self.nombre + " " + self.apellidos
     
+    
 class PersonaIndex(Page):
     intro = RichTextField(blank=True)
     

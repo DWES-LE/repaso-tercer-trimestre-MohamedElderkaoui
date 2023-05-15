@@ -157,16 +157,16 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$390000$GsMaJY2kjEzuPI0O9Rpheh$PE/wpMrWmgXbDY802C8m5D/jWGAkf6ian7dpZnrj0UU=",
-    "last_login": "2023-05-08T14:51:31.704Z",
+    "password": "pbkdf2_sha256$390000$iEMS4yTfSOneLIthsXQZgJ$cS8Cf7boWj5240EoCBLrMjy6PtwaCdfb5dVenmaUGow=",
+    "last_login": "2023-05-15T13:45:31.968Z",
     "is_superuser": true,
-    "username": "mohamed",
+    "username": "lm",
     "first_name": "",
     "last_name": "",
-    "email": "mderkaoui10@gmail.com",
+    "email": "",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2023-05-08T14:50:55.881Z",
+    "date_joined": "2023-05-15T13:45:23.168Z",
     "groups": [],
     "user_permissions": []
   }
@@ -176,21 +176,21 @@
   "pk": 1,
   "fields": {
     "content_type": [
-      "persona",
-      "persona"
+      "wagtailcore",
+      "page"
     ],
-    "label": "fsaz",
-    "action": "wagtail.create",
+    "label": "Welcome to your new Wagtail site!",
+    "action": "wagtail.delete",
     "data": {},
-    "timestamp": "2023-05-08T14:53:08.006Z",
-    "uuid": "0fcdb116-754a-4f59-8b06-6a33f0726566",
+    "timestamp": "2023-05-15T13:46:00.470Z",
+    "uuid": "85b7705f-d773-4df5-93c0-23b5d73507a1",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": null,
-    "content_changed": true,
-    "deleted": false,
-    "page": 3
+    "content_changed": false,
+    "deleted": true,
+    "page": 2
   }
 },
 {
@@ -198,18 +198,18 @@
   "pk": 2,
   "fields": {
     "content_type": [
-      "persona",
-      "persona"
+      "home",
+      "homepage"
     ],
-    "label": "fsaz",
-    "action": "wagtail.edit",
+    "label": "Inicio",
+    "action": "wagtail.create",
     "data": {},
-    "timestamp": "2023-05-08T14:53:08.098Z",
-    "uuid": "0fcdb116-754a-4f59-8b06-6a33f0726566",
+    "timestamp": "2023-05-15T13:46:45.390Z",
+    "uuid": "e258ea2a-f393-4d42-8134-b0c41a979dfc",
     "user": [
-      "mohamed"
+      "lm"
     ],
-    "revision": 1,
+    "revision": null,
     "content_changed": true,
     "deleted": false,
     "page": 3
@@ -220,18 +220,18 @@
   "pk": 3,
   "fields": {
     "content_type": [
-      "persona",
-      "persona"
+      "home",
+      "homepage"
     ],
-    "label": "fsaz",
+    "label": "Inicio",
     "action": "wagtail.edit",
     "data": {},
-    "timestamp": "2023-05-08T14:53:15.351Z",
-    "uuid": "7af6a340-2f15-484a-9167-55637737ef26",
+    "timestamp": "2023-05-15T13:46:45.459Z",
+    "uuid": "e258ea2a-f393-4d42-8134-b0c41a979dfc",
     "user": [
-      "mohamed"
+      "lm"
     ],
-    "revision": 2,
+    "revision": 1,
     "content_changed": true,
     "deleted": false,
     "page": 3
@@ -242,19 +242,19 @@
   "pk": 4,
   "fields": {
     "content_type": [
-      "persona",
-      "persona"
+      "home",
+      "homepage"
     ],
-    "label": "fsaz",
-    "action": "wagtail.publish",
+    "label": "Inicio",
+    "action": "wagtail.edit",
     "data": {},
-    "timestamp": "2023-05-08T14:53:15.442Z",
-    "uuid": "7af6a340-2f15-484a-9167-55637737ef26",
+    "timestamp": "2023-05-15T13:46:49.022Z",
+    "uuid": "47969e46-8f05-4265-91fd-000aba663307",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 2,
-    "content_changed": false,
+    "content_changed": true,
     "deleted": false,
     "page": 3
   }
@@ -264,21 +264,21 @@
   "pk": 5,
   "fields": {
     "content_type": [
-      "persona",
-      "persona"
+      "home",
+      "homepage"
     ],
-    "label": "mohmed",
-    "action": "wagtail.create",
+    "label": "Inicio",
+    "action": "wagtail.publish",
     "data": {},
-    "timestamp": "2023-05-10T16:17:32.293Z",
-    "uuid": "99e8988c-603c-442a-b731-689d9937d25c",
+    "timestamp": "2023-05-15T13:46:49.099Z",
+    "uuid": "47969e46-8f05-4265-91fd-000aba663307",
     "user": [
-      "mohamed"
+      "lm"
     ],
-    "revision": null,
-    "content_changed": true,
+    "revision": 2,
+    "content_changed": false,
     "deleted": false,
-    "page": 4
+    "page": 3
   }
 },
 {
@@ -286,21 +286,21 @@
   "pk": 6,
   "fields": {
     "content_type": [
-      "persona",
-      "persona"
+      "home",
+      "homepage"
     ],
-    "label": "mohmed",
+    "label": "Inicio",
     "action": "wagtail.edit",
     "data": {},
-    "timestamp": "2023-05-10T16:17:32.366Z",
-    "uuid": "99e8988c-603c-442a-b731-689d9937d25c",
+    "timestamp": "2023-05-15T13:49:37.089Z",
+    "uuid": "f139c8df-e1da-4088-969f-018004f8f868",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 3,
     "content_changed": true,
     "deleted": false,
-    "page": 4
+    "page": 3
   }
 },
 {
@@ -308,21 +308,21 @@
   "pk": 7,
   "fields": {
     "content_type": [
-      "persona",
-      "persona"
+      "home",
+      "homepage"
     ],
-    "label": "mohmed",
+    "label": "Inicio",
     "action": "wagtail.publish",
     "data": {},
-    "timestamp": "2023-05-10T16:17:32.479Z",
-    "uuid": "99e8988c-603c-442a-b731-689d9937d25c",
+    "timestamp": "2023-05-15T13:49:37.161Z",
+    "uuid": "f139c8df-e1da-4088-969f-018004f8f868",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 3,
     "content_changed": true,
     "deleted": false,
-    "page": 4
+    "page": 3
   }
 },
 {
@@ -330,21 +330,21 @@
   "pk": 8,
   "fields": {
     "content_type": [
-      "persona",
-      "personalist"
+      "home",
+      "homepage"
     ],
-    "label": "ss",
-    "action": "wagtail.create",
+    "label": "Inicio",
+    "action": "wagtail.edit",
     "data": {},
-    "timestamp": "2023-05-10T16:32:17.774Z",
-    "uuid": "cff368c2-f10b-4de4-9a2f-2e87331f32bc",
+    "timestamp": "2023-05-15T13:50:06.821Z",
+    "uuid": "453bea36-2965-4a30-9f43-37a3a932c6b1",
     "user": [
-      "mohamed"
+      "lm"
     ],
-    "revision": null,
+    "revision": 4,
     "content_changed": true,
     "deleted": false,
-    "page": 5
+    "page": 3
   }
 },
 {
@@ -352,21 +352,21 @@
   "pk": 9,
   "fields": {
     "content_type": [
-      "persona",
-      "personalist"
+      "home",
+      "homepage"
     ],
-    "label": "ss",
-    "action": "wagtail.edit",
+    "label": "Inicio",
+    "action": "wagtail.publish",
     "data": {},
-    "timestamp": "2023-05-10T16:32:17.844Z",
-    "uuid": "cff368c2-f10b-4de4-9a2f-2e87331f32bc",
+    "timestamp": "2023-05-15T13:50:06.905Z",
+    "uuid": "453bea36-2965-4a30-9f43-37a3a932c6b1",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 4,
     "content_changed": true,
     "deleted": false,
-    "page": 5
+    "page": 3
   }
 },
 {
@@ -374,21 +374,21 @@
   "pk": 10,
   "fields": {
     "content_type": [
-      "persona",
-      "personalist"
+      "blog",
+      "blogindexpage"
     ],
-    "label": "ss",
-    "action": "wagtail.edit",
+    "label": "blog",
+    "action": "wagtail.create",
     "data": {},
-    "timestamp": "2023-05-10T16:32:28.492Z",
-    "uuid": "2b058e7e-68f5-47e3-a45d-ef6ae16708dc",
+    "timestamp": "2023-05-15T13:50:32.722Z",
+    "uuid": "00ac2164-400e-49bf-8af9-646065338483",
     "user": [
-      "mohamed"
+      "lm"
     ],
-    "revision": 5,
+    "revision": null,
     "content_changed": true,
     "deleted": false,
-    "page": 5
+    "page": 4
   }
 },
 {
@@ -396,21 +396,21 @@
   "pk": 11,
   "fields": {
     "content_type": [
-      "persona",
-      "personalist"
+      "blog",
+      "blogindexpage"
     ],
-    "label": "ss",
-    "action": "wagtail.publish",
+    "label": "blog",
+    "action": "wagtail.edit",
     "data": {},
-    "timestamp": "2023-05-10T16:32:28.594Z",
-    "uuid": "2b058e7e-68f5-47e3-a45d-ef6ae16708dc",
+    "timestamp": "2023-05-15T13:50:32.762Z",
+    "uuid": "00ac2164-400e-49bf-8af9-646065338483",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 5,
-    "content_changed": false,
+    "content_changed": true,
     "deleted": false,
-    "page": 5
+    "page": 4
   }
 },
 {
@@ -418,21 +418,21 @@
   "pk": 12,
   "fields": {
     "content_type": [
-      "persona",
-      "personalist"
+      "blog",
+      "blogindexpage"
     ],
-    "label": "3rw",
-    "action": "wagtail.create",
+    "label": "blog",
+    "action": "wagtail.publish",
     "data": {},
-    "timestamp": "2023-05-10T16:38:17.063Z",
-    "uuid": "ba86ef71-78b2-4a23-b5f2-2662aeec6449",
+    "timestamp": "2023-05-15T13:50:32.859Z",
+    "uuid": "00ac2164-400e-49bf-8af9-646065338483",
     "user": [
-      "mohamed"
+      "lm"
     ],
-    "revision": null,
+    "revision": 5,
     "content_changed": true,
     "deleted": false,
-    "page": 6
+    "page": 4
   }
 },
 {
@@ -441,20 +441,20 @@
   "fields": {
     "content_type": [
       "persona",
-      "personalist"
+      "personaindex"
     ],
-    "label": "3rw",
-    "action": "wagtail.edit",
+    "label": "persona",
+    "action": "wagtail.create",
     "data": {},
-    "timestamp": "2023-05-10T16:38:17.142Z",
-    "uuid": "ba86ef71-78b2-4a23-b5f2-2662aeec6449",
+    "timestamp": "2023-05-15T13:50:46.257Z",
+    "uuid": "2fa327c6-3c41-4cef-9ed9-db1c5482a226",
     "user": [
-      "mohamed"
+      "lm"
     ],
-    "revision": 6,
+    "revision": null,
     "content_changed": true,
     "deleted": false,
-    "page": 6
+    "page": 5
   }
 },
 {
@@ -463,20 +463,20 @@
   "fields": {
     "content_type": [
       "persona",
-      "personalist"
+      "personaindex"
     ],
-    "label": "3rw",
-    "action": "wagtail.publish",
+    "label": "persona",
+    "action": "wagtail.edit",
     "data": {},
-    "timestamp": "2023-05-10T16:38:17.286Z",
-    "uuid": "ba86ef71-78b2-4a23-b5f2-2662aeec6449",
+    "timestamp": "2023-05-15T13:50:46.301Z",
+    "uuid": "2fa327c6-3c41-4cef-9ed9-db1c5482a226",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 6,
     "content_changed": true,
     "deleted": false,
-    "page": 6
+    "page": 5
   }
 },
 {
@@ -485,20 +485,20 @@
   "fields": {
     "content_type": [
       "persona",
-      "persona"
+      "personaindex"
     ],
-    "label": "vdvx",
-    "action": "wagtail.create",
+    "label": "persona",
+    "action": "wagtail.publish",
     "data": {},
-    "timestamp": "2023-05-10T16:39:50.300Z",
-    "uuid": "661f5f38-e0f1-405b-b4b0-f00ef32c8b50",
+    "timestamp": "2023-05-15T13:50:46.389Z",
+    "uuid": "2fa327c6-3c41-4cef-9ed9-db1c5482a226",
     "user": [
-      "mohamed"
+      "lm"
     ],
-    "revision": null,
+    "revision": 6,
     "content_changed": true,
     "deleted": false,
-    "page": 7
+    "page": 5
   }
 },
 {
@@ -515,7 +515,7 @@
     "timestamp": "2023-05-10T16:39:50.389Z",
     "uuid": "661f5f38-e0f1-405b-b4b0-f00ef32c8b50",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 7,
     "content_changed": true,
@@ -537,7 +537,7 @@
     "timestamp": "2023-05-10T16:39:50.518Z",
     "uuid": "661f5f38-e0f1-405b-b4b0-f00ef32c8b50",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 7,
     "content_changed": true,
@@ -559,7 +559,7 @@
     "timestamp": "2023-05-10T16:44:37.713Z",
     "uuid": "ad88875a-19d0-4460-a99c-e760a3e124ad",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": null,
     "content_changed": true,
@@ -581,7 +581,7 @@
     "timestamp": "2023-05-10T16:44:37.790Z",
     "uuid": "ad88875a-19d0-4460-a99c-e760a3e124ad",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 8,
     "content_changed": true,
@@ -603,7 +603,7 @@
     "timestamp": "2023-05-10T16:44:37.906Z",
     "uuid": "ad88875a-19d0-4460-a99c-e760a3e124ad",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 8,
     "content_changed": true,
@@ -625,7 +625,7 @@
     "timestamp": "2023-05-10T16:45:43.076Z",
     "uuid": "0e6de945-04e7-49a5-8fcb-9b4b445e32cf",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": null,
     "content_changed": true,
@@ -647,7 +647,7 @@
     "timestamp": "2023-05-10T16:45:43.126Z",
     "uuid": "0e6de945-04e7-49a5-8fcb-9b4b445e32cf",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 9,
     "content_changed": true,
@@ -669,7 +669,7 @@
     "timestamp": "2023-05-10T16:45:43.213Z",
     "uuid": "0e6de945-04e7-49a5-8fcb-9b4b445e32cf",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 9,
     "content_changed": true,
@@ -691,7 +691,7 @@
     "timestamp": "2023-05-10T16:49:34.812Z",
     "uuid": "2cec7749-2aeb-46a3-9b86-688c9f3dde22",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": null,
     "content_changed": true,
@@ -713,7 +713,7 @@
     "timestamp": "2023-05-10T16:49:34.870Z",
     "uuid": "2cec7749-2aeb-46a3-9b86-688c9f3dde22",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 10,
     "content_changed": true,
@@ -735,7 +735,7 @@
     "timestamp": "2023-05-10T16:49:34.976Z",
     "uuid": "2cec7749-2aeb-46a3-9b86-688c9f3dde22",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 10,
     "content_changed": true,
@@ -757,7 +757,7 @@
     "timestamp": "2023-05-11T09:50:05.944Z",
     "uuid": "8a3e9cf4-69a1-4c9a-a31b-626dca962e30",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": null,
     "content_changed": true,
@@ -779,7 +779,7 @@
     "timestamp": "2023-05-11T09:50:06.012Z",
     "uuid": "8a3e9cf4-69a1-4c9a-a31b-626dca962e30",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 11,
     "content_changed": true,
@@ -801,7 +801,7 @@
     "timestamp": "2023-05-11T09:50:12.771Z",
     "uuid": "1452319e-b9cb-4250-b38f-92a7b3afea22",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 12,
     "content_changed": true,
@@ -823,12 +823,276 @@
     "timestamp": "2023-05-11T09:50:13.174Z",
     "uuid": "1452319e-b9cb-4250-b38f-92a7b3afea22",
     "user": [
-      "mohamed"
+      "lm"
     ],
     "revision": 12,
     "content_changed": false,
     "deleted": false,
     "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 31,
+  "fields": {
+    "content_type": [
+      "home",
+      "homepage"
+    ],
+    "label": "sp",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2023-05-15T13:23:43.082Z",
+    "uuid": "ad469449-ba80-4b4f-8828-e7c987fce272",
+    "user": [
+      "lm"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 32,
+  "fields": {
+    "content_type": [
+      "home",
+      "homepage"
+    ],
+    "label": "sp",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2023-05-15T13:23:43.154Z",
+    "uuid": "ad469449-ba80-4b4f-8828-e7c987fce272",
+    "user": [
+      "lm"
+    ],
+    "revision": 1,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 33,
+  "fields": {
+    "content_type": [
+      "home",
+      "homepage"
+    ],
+    "label": "sp",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2023-05-15T13:24:46.341Z",
+    "uuid": "3d4bdfdc-d08a-4332-8184-6406b00b1e69",
+    "user": [
+      "lm"
+    ],
+    "revision": 2,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 34,
+  "fields": {
+    "content_type": [
+      "home",
+      "homepage"
+    ],
+    "label": "sp",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2023-05-15T13:24:46.440Z",
+    "uuid": "3d4bdfdc-d08a-4332-8184-6406b00b1e69",
+    "user": [
+      "lm"
+    ],
+    "revision": 2,
+    "content_changed": false,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 35,
+  "fields": {
+    "content_type": [
+      "persona",
+      "personaindex"
+    ],
+    "label": "persona",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2023-05-15T13:25:18.357Z",
+    "uuid": "6b6352cf-5cb1-4dc4-af0f-a5b6bc2a26c6",
+    "user": [
+      "lm"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 36,
+  "fields": {
+    "content_type": [
+      "persona",
+      "personaindex"
+    ],
+    "label": "persona",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2023-05-15T13:25:18.429Z",
+    "uuid": "6b6352cf-5cb1-4dc4-af0f-a5b6bc2a26c6",
+    "user": [
+      "lm"
+    ],
+    "revision": 3,
+    "content_changed": true,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 37,
+  "fields": {
+    "content_type": [
+      "persona",
+      "personaindex"
+    ],
+    "label": "persona",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2023-05-15T13:25:18.563Z",
+    "uuid": "6b6352cf-5cb1-4dc4-af0f-a5b6bc2a26c6",
+    "user": [
+      "lm"
+    ],
+    "revision": 3,
+    "content_changed": true,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 38,
+  "fields": {
+    "content_type": [
+      "persona",
+      "personaindex"
+    ],
+    "label": "persona",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2023-05-15T13:25:41.125Z",
+    "uuid": "a4fcda30-9dd4-4434-878d-1f0b6f5c1e8c",
+    "user": [
+      "lm"
+    ],
+    "revision": 4,
+    "content_changed": true,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 39,
+  "fields": {
+    "content_type": [
+      "persona",
+      "personaindex"
+    ],
+    "label": "persona",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2023-05-15T13:25:41.238Z",
+    "uuid": "a4fcda30-9dd4-4434-878d-1f0b6f5c1e8c",
+    "user": [
+      "lm"
+    ],
+    "revision": 4,
+    "content_changed": false,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 40,
+  "fields": {
+    "content_type": [
+      "blog",
+      "blogindexpage"
+    ],
+    "label": "Blog",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2023-05-15T13:33:13.526Z",
+    "uuid": "709a839e-a24e-411a-9c9b-71852f4daead",
+    "user": [
+      "lm"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 41,
+  "fields": {
+    "content_type": [
+      "blog",
+      "blogindexpage"
+    ],
+    "label": "Blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2023-05-15T13:33:13.606Z",
+    "uuid": "709a839e-a24e-411a-9c9b-71852f4daead",
+    "user": [
+      "lm"
+    ],
+    "revision": 5,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 42,
+  "fields": {
+    "content_type": [
+      "blog",
+      "blogindexpage"
+    ],
+    "label": "Blog",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2023-05-15T13:33:13.762Z",
+    "uuid": "709a839e-a24e-411a-9c9b-71852f4daead",
+    "user": [
+      "lm"
+    ],
+    "revision": 5,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
   }
 },
 {
@@ -840,6 +1104,28 @@
         "Moderators"
       ]
     ]
+  }
+},
+{
+  "model": "wagtailcore.modellogentry",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "wagtailcore",
+      "site"
+    ],
+    "label": "Mohamed [predeterminado]",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2023-05-15T13:48:12.878Z",
+    "uuid": "43abe7e9-8322-487a-970b-0d8ebc050b5f",
+    "user": [
+      "lm"
+    ],
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "object_id": "2"
   }
 }
 ]

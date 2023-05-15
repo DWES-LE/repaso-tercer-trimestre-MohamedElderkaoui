@@ -1,0 +1,14 @@
+
+(env) C:\2DAW\Desarrollo Web en entorno Servidor DAW Diurno\repaso-tercer-trimestre-MohamedElderkaoui>py manage.py makemigrations 
+No changes detected
+
+(env) C:\2DAW\Desarrollo Web en entorno Servidor DAW Diurno\repaso-tercer-trimestre-MohamedElderkaoui>py manage.py migrate 
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, home, persona, sessions, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailusers
+Running migrations:
+  No migrations to apply.
+
+(env) C:\2DAW\Desarrollo Web en entorno Servidor DAW Diurno\repaso-tercer-trimestre-MohamedElderkaoui>py manage.py loaddata data.json 
+Installed 39 object(s) from 1 fixture(s)
+
+(env) C:\2DAW\Desarrollo Web en entorno Servidor DAW Diurno\repaso-tercer-trimestre-MohamedElderkaoui>py manage.py runserver 
