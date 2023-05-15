@@ -18,6 +18,9 @@ class BlogIndexPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('intro')
     ]
+    
+    subpage_types = ["blog.BlogPage"]
+    
     from django.db import models
 
 from wagtail.models import Page

@@ -15,6 +15,8 @@ class HomePage(Page):
         FieldPanel('video'),
         FieldPanel('imagen'),
         ]
+    subpage_types = ['blog.BlogIndexPage','home.home','persona.PersonaIndex']
+    
 class home(models.Model):
     title = models.CharField(max_length=255)
     body = RichTextField(blank=True)
