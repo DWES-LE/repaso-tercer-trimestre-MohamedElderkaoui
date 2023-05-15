@@ -15,18 +15,4 @@ class HomePage(Page):
         FieldPanel('video'),
         FieldPanel('imagen'),
         ]
-    subpage_types = ['blog.BlogIndexPage','home.home','persona.PersonaIndex']
-    
-class home(models.Model):
-    title = models.CharField(max_length=255)
-    body = RichTextField(blank=True)
-    video = models.FileField( blank=True)
-    image = models.ImageField( blank=True)
-    panels = [
-        FieldPanel('title'),
-        FieldPanel('body'),
-        FieldPanel('video'),
-        FieldPanel('image'),
-        ]
-    def __str__(self):
-        return self.title
+    subpage_types = ['blog.BlogIndexPage','persona.PersonaIndex']
