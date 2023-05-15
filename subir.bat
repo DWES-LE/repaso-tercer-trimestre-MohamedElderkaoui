@@ -8,4 +8,7 @@ python manage.py dumpdata --natural-foreign --indent 2 ^
 git add .
 git commit -m "fecha: %date% hora: %time% por: %username% que a traido: %1"
 git push
+py manage.py makemigrations
+py manage.py migrate
 py manage.py  loaddata data.json 
+py manage.py runserver
