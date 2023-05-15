@@ -6,7 +6,7 @@ python manage.py dumpdata --natural-foreign --indent 2 ^
     -e wagtailsearch ^
     -e sessions > data.json
 git add .
-git commit -m "fecha: %date% hora: %time% por: %username% que a traido: %1"
+git commit -m "fecha: %date% hora: %time% por: %username% el nº %1 version: %2"
 git push
 py manage.py makemigrations
 py manage.py migrate
