@@ -252,4 +252,3 @@ class PersonaListModelTest(TestCase):
         persona_list = PersonaList()
         persona_list.str = "Prueba str"
         self.assertEqual(persona_list.str, "Prueba str")
-        """
