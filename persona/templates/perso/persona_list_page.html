@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    {% for category in page.get_children %}
+      <h2>{{ category.title }}</h2>
+      <hr>
+      <div class="row">
+        {% for persona in category.get_children %}
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <img src="{{ persona.specific.foto.url }}" class="card-img-top" alt="{{ persona.specific.nombre }} {{ persona.specific.apellidos }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ persona.specific.nombre }} {{ persona.specific.apellidos }}</h5>
+                <p class="card-text">{{ persona.specific.biografia|truncatewords:30 }}</p>
+                <a href="{{ persona.url }}" class="btn btn-primary">Ver detalles</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

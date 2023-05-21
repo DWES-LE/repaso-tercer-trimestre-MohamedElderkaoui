@@ -22,7 +22,10 @@
         {% if request.in_preview_panel %}
         <base target="_blank">
         {% endif %}
-
+        <!-- 
+            add bootstrap css
+         -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
 
@@ -33,7 +36,15 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+      
+        {% block header %}
+        {% include "includes/header.html" %}
+        {% endblock %}
 
+        <!-- navbar -->
+        {% block navbar %}
+        {% include "includes/navbar.html" %}
+        {% endblock %}
         {% block content %}{% endblock %}
 
         {# Global javascript #}
