@@ -1,0 +1,607 @@
+[
+{
+  "model": "wagtailcore.locale",
+  "pk": 1,
+  "fields": {
+    "language_code": "en"
+  }
+},
+{
+  "model": "wagtailcore.site",
+  "pk": 3,
+  "fields": {
+    "hostname": "localhost",
+    "port": 80,
+    "site_name": "mohamed",
+    "root_page": 7,
+    "is_default_site": true
+  }
+},
+{
+  "model": "wagtailcore.collection",
+  "pk": 1,
+  "fields": {
+    "path": "0001",
+    "depth": 1,
+    "numchild": 0,
+    "name": "Root"
+  }
+},
+{
+  "model": "wagtailcore.workflowpage",
+  "pk": 1,
+  "fields": {
+    "workflow": 1
+  }
+},
+{
+  "model": "wagtailcore.workflowtask",
+  "pk": 1,
+  "fields": {
+    "sort_order": 0,
+    "workflow": 1,
+    "task": 1
+  }
+},
+{
+  "model": "wagtailcore.task",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators approval",
+    "content_type": [
+      "wagtailcore",
+      "groupapprovaltask"
+    ],
+    "active": true
+  }
+},
+{
+  "model": "wagtailcore.workflow",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators approval",
+    "active": true
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 1,
+  "fields": {
+    "name": "srf",
+    "slug": "srf"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 2,
+  "fields": {
+    "name": "dfs",
+    "slug": "dfs"
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 1,
+  "fields": {
+    "tag": 2,
+    "content_type": [
+      "wagtailimages",
+      "image"
+    ],
+    "object_id": 1
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators",
+    "permissions": [
+      [
+        "access_admin",
+        "wagtailadmin",
+        "admin"
+      ],
+      [
+        "add_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "change_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "choose_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "delete_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "add_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "change_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "delete_image",
+        "wagtailimages",
+        "image"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "Editors",
+    "permissions": [
+      [
+        "access_admin",
+        "wagtailadmin",
+        "admin"
+      ],
+      [
+        "add_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "change_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "choose_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "delete_document",
+        "wagtaildocs",
+        "document"
+      ],
+      [
+        "add_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "change_image",
+        "wagtailimages",
+        "image"
+      ],
+      [
+        "delete_image",
+        "wagtailimages",
+        "image"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$pfwHcTEr8xj0ictwqz8XWf$9A7ltDsBonE7QL2RM+ajtAn59WVLJEraA8+a9KIlx3Y=",
+    "last_login": "2023-05-22T07:12:55.966Z",
+    "is_superuser": true,
+    "username": "mohamed",
+    "first_name": "",
+    "last_name": "",
+    "email": "mderkaoui10@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-05-22T07:11:53.084Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "blog.blogindexpage",
+  "pk": 10,
+  "fields": {
+    "intro": ""
+  }
+},
+{
+  "model": "persona.persona",
+  "pk": 9,
+  "fields": {
+    "nombre": "1EW",
+    "apellidos": "DWDA",
+    "fecha_nacimiento": "2023-05-09",
+    "lugar_nacimiento": "DEWC",
+    "biografia": "<p data-block-key=\"hlwnq\"> &lt;DD</p>",
+    "foto": "persona/FlBI0ASXEAIqD48.2e16d0ba.fill-320x240.jpg",
+    "twitter": "",
+    "facebook": "",
+    "instagram": "",
+    "linkedin": "",
+    "body": "",
+    "into": ""
+  }
+},
+{
+  "model": "persona.personaindexpage",
+  "pk": 8,
+  "fields": {
+    "intro": "<p data-block-key=\"p6h0e\">ef</p>"
+  }
+},
+{
+  "model": "wagtailcore.groupapprovaltask",
+  "pk": 1,
+  "fields": {
+    "groups": [
+      [
+        "Moderators"
+      ]
+    ]
+  }
+},
+{
+  "model": "wagtailcore.grouppagepermission",
+  "pk": 1,
+  "fields": {
+    "group": [
+      "Moderators"
+    ],
+    "page": 1,
+    "permission_type": "add"
+  }
+},
+{
+  "model": "wagtailcore.grouppagepermission",
+  "pk": 2,
+  "fields": {
+    "group": [
+      "Moderators"
+    ],
+    "page": 1,
+    "permission_type": "edit"
+  }
+},
+{
+  "model": "wagtailcore.grouppagepermission",
+  "pk": 3,
+  "fields": {
+    "group": [
+      "Moderators"
+    ],
+    "page": 1,
+    "permission_type": "publish"
+  }
+},
+{
+  "model": "wagtailcore.grouppagepermission",
+  "pk": 4,
+  "fields": {
+    "group": [
+      "Editors"
+    ],
+    "page": 1,
+    "permission_type": "add"
+  }
+},
+{
+  "model": "wagtailcore.grouppagepermission",
+  "pk": 5,
+  "fields": {
+    "group": [
+      "Editors"
+    ],
+    "page": 1,
+    "permission_type": "edit"
+  }
+},
+{
+  "model": "wagtailcore.grouppagepermission",
+  "pk": 6,
+  "fields": {
+    "group": [
+      "Moderators"
+    ],
+    "page": 1,
+    "permission_type": "lock"
+  }
+},
+{
+  "model": "wagtailcore.grouppagepermission",
+  "pk": 7,
+  "fields": {
+    "group": [
+      "Moderators"
+    ],
+    "page": 1,
+    "permission_type": "unlock"
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 1,
+  "fields": {
+    "path": "0001",
+    "depth": 1,
+    "numchild": 1,
+    "translation_key": "1514a42c-6450-4ce4-ae17-b9db2c32bb8a",
+    "locale": 1,
+    "latest_revision": null,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Root",
+    "draft_title": "Root",
+    "slug": "root",
+    "content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "url_path": "/",
+    "owner": null,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": null,
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 7,
+  "fields": {
+    "path": "00010001",
+    "depth": 2,
+    "numchild": 2,
+    "translation_key": "cf9b791d-0bf1-497a-a052-a56110b3701f",
+    "locale": 1,
+    "latest_revision": 5,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-05-22T08:02:27.914Z",
+    "last_published_at": "2023-05-22T08:02:47.022Z",
+    "live_revision": 5,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "home",
+    "draft_title": "home",
+    "slug": "home",
+    "content_type": [
+      "home",
+      "homepage"
+    ],
+    "url_path": "/home/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-05-22T08:02:46.992Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 8,
+  "fields": {
+    "path": "000100010001",
+    "depth": 3,
+    "numchild": 1,
+    "translation_key": "e50f5743-9485-40fa-98da-f8dab97a04d3",
+    "locale": 1,
+    "latest_revision": 8,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-05-22T08:03:24.457Z",
+    "last_published_at": "2023-05-22T08:22:53.948Z",
+    "live_revision": 8,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "persona",
+    "draft_title": "persona",
+    "slug": "personas",
+    "content_type": [
+      "persona",
+      "personaindexpage"
+    ],
+    "url_path": "/home/personas/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-05-22T08:22:53.908Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 9,
+  "fields": {
+    "path": "0001000100010001",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "82e20be8-f4e7-42a2-85ed-30bcb68a8b63",
+    "locale": 1,
+    "latest_revision": 7,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-05-22T08:04:18.974Z",
+    "last_published_at": "2023-05-22T08:04:18.974Z",
+    "live_revision": 7,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "CD",
+    "draft_title": "CD",
+    "slug": "cd",
+    "content_type": [
+      "persona",
+      "persona"
+    ],
+    "url_path": "/home/personas/cd/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-05-22T08:04:18.940Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 10,
+  "fields": {
+    "path": "000100010002",
+    "depth": 3,
+    "numchild": 0,
+    "translation_key": "2edd8366-ba65-46d3-8651-4a3d3d3a6561",
+    "locale": 1,
+    "latest_revision": 9,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-05-22T08:35:10.017Z",
+    "last_published_at": "2023-05-22T08:35:10.017Z",
+    "live_revision": 9,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Blog",
+    "draft_title": "Blog",
+    "slug": "blog",
+    "content_type": [
+      "blog",
+      "blogindexpage"
+    ],
+    "url_path": "/home/blog/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-05-22T08:35:09.978Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailimages.image",
+  "pk": 1,
+  "fields": {
+    "collection": 1,
+    "title": "FlBTuKhXgAIutmN.2e16d0ba.fill-320x240",
+    "file": "original_images/FlBTuKhXgAIutmN.2e16d0ba.fill-320x240.jpg",
+    "width": 320,
+    "height": 240,
+    "created_at": "2023-05-22T08:36:03.137Z",
+    "uploaded_by_user": [
+      "mohamed"
+    ],
+    "focal_point_x": null,
+    "focal_point_y": null,
+    "focal_point_width": null,
+    "focal_point_height": null,
+    "file_size": 28044,
+    "file_hash": "a65dcc43dc52b8ffb56be39c8f1a65ccbc6c36a2"
+  }
+},
+{
+  "model": "wagtailusers.userprofile",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "mohamed"
+    ],
+    "submitted_notifications": true,
+    "approved_notifications": true,
+    "rejected_notifications": true,
+    "updated_comments_notifications": true,
+    "preferred_language": "",
+    "current_time_zone": "",
+    "avatar": "",
+    "dismissibles": {
+      "help": true,
+      "whats-new-in-wagtail-5.0": true,
+      "editor-guide": true
+    },
+    "theme": "system"
+  }
+},
+{
+  "model": "wagtailredirects.redirect",
+  "pk": 1,
+  "fields": {
+    "old_path": "/persona",
+    "site": [
+      "localhost",
+      80
+    ],
+    "is_permanent": true,
+    "redirect_page": 8,
+    "redirect_page_route_path": "",
+    "redirect_link": "",
+    "automatically_created": true,
+    "created_at": "2023-05-22T08:22:53.978Z"
+  }
+},
+{
+  "model": "wagtailredirects.redirect",
+  "pk": 2,
+  "fields": {
+    "old_path": "/persona/cd",
+    "site": [
+      "localhost",
+      80
+    ],
+    "is_permanent": true,
+    "redirect_page": 9,
+    "redirect_page_route_path": "",
+    "redirect_link": "",
+    "automatically_created": true,
+    "created_at": "2023-05-22T08:22:53.978Z"
+  }
+},
+{
+  "model": "home.homepage",
+  "pk": 7,
+  "fields": {
+    "body": "<p data-block-key=\"tgvyg\">cqs</p>"
+  }
+}
+]

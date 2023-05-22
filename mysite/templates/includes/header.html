@@ -1,4 +1,6 @@
 <!-- header.html -->
+{% load wagtailcore_tags %}
+{% load static %}
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -16,7 +18,7 @@
                         <a class="nav-link" href="{% slugurl 'blog' %}">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% slugurl 'personas' %}">Personas</a>
+                        <a class="nav-link" href="{% slugurl 'personas' %}">Persona</a>
                     </li>
                 </ul>
             </div>
