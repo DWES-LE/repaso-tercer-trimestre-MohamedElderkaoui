@@ -86,6 +86,28 @@ class entrenador(Page):
         FieldPanel('imagen'),
         FieldPanel('contenido'),
     ]
+    
+class partido(Page):
+    equipo1 = models.ForeignKey('equipo', on_delete=models.CASCADE, related_name='equipo1')
+    equipo2 = models.ForeignKey('equipo', on_delete=models.CASCADE, related_name='equipo2')
+    fecha = models.DateField()
+    hora = models.TimeField()
+    lugar = models.CharField(max_length=250)
+    goles_equipo1 = models.IntegerField()
+    goles_equipo2 = models.IntegerField()
+    
+    parent_page_types = ['equipo']
+    subpage_types = []
+    template = "futbol/partido_page.html"
+    content_panels = Page.content_panels + [
+        FieldPanel('equipo1'),
+        FieldPanel('equipo2'),
+        FieldPanel('fecha'),
+        FieldPanel('hora'),
+        FieldPanel('lugar'),
+    ]
+    
+
 
 
 
