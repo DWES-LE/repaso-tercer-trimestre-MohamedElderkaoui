@@ -85,7 +85,39 @@ class entrenador_index_page(Page):
     template = "futbol/entrenador_index_page.html"
 
 
+class Liga_Clasificacion_Page(Page):
+    nombre = models.CharField(max_length=250)
+    imagen = models.ImageField(upload_to='images/')
+    contenido = RichTextField(blank=True)
+    equipos = models.ManyToManyField(Equipo)
+    puntos = models.IntegerField()
+    partidos_jugados = models.IntegerField()
+    partidos_ganados = models.IntegerField()
+    partidos_empatados = models.IntegerField()
+    partidos_perdidos = models.IntegerField()
+    goles_favor = models.IntegerField()
+    goles_contra = models.IntegerField()
+    subpage_types = ['Equipo']
+    template = "futbol/liga_clasificacion_page.html"
+    content_panels = Page.content_panels + [
+        FieldPanel('nombre'),
+        FieldPanel('imagen'),
+        FieldPanel('contenido'),
+        FieldPanel('equipos'),
+        FieldPanel('partidos_jugados'),
+        FieldPanel('partidos_ganados'),
+        FieldPanel('partidos_empatados'),
+        FieldPanel('partidos_perdidos'),
+        FieldPanel('goles_favor'),
+        FieldPanel('goles_contra'),
+    ]
+    
+    def save(self, *args, **kwargs):
+        # Calculate the points based on the results
+        self.puntos = self.partidos_ganados * 3 + self.partidos_empatados
 
-
-
-
+        # Save the instance
+        super().save(*args, **kwargs)
+class Liga_Clasificacion_Index_Page(Page):
+    subpage_types = ['Liga_Clasificacion_Page']
+    template = "futbol/liga_clasificacion_index_page.html"
