@@ -196,3 +196,31 @@ class Liga_Index_Page(Page):
     subpage_types = ['Liga_Clasificacion_Page']
     template = "futbol/liga_index_page.html"
     
+class partido(Page):
+    equipo_local = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_local_partido', choices=Equipo.objects.all())
+    equipo_visitante = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_visitante_partido', choices=Equipo.objects.all())
+    fecha = models.DateField()
+    goles_local = models.IntegerField()
+    goles_visitante = models.IntegerField()
+    parent_page_types = ['Equipo']
+    subpage_types = []
+    template = "futbol/partido_page.html"
+    content_panels = Page.content_panels + [
+        FieldPanel('equipo_local'),
+        FieldPanel('equipo_visitante'),
+        FieldPanel('fecha'),
+        FieldPanel('goles_local'),
+        FieldPanel('goles_visitante'),
+    ]
+    def save(self, *args, **kwargs):
+        # Custom logic or calculations before saving
+        # For example, updating the result based on the goals scored
+        if self.goles_local > self.goles_visitante:
+            self.resultado = 'Local'
+        elif self.goles_local < self.goles_visitante:
+            self.resultado = 'Visitante'
+        else:
+            self.resultado = 'Empate'
+
+        # Save the instance
+        super().save(*args, **kwargs)
