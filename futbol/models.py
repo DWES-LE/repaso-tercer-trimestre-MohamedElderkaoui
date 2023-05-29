@@ -42,11 +42,9 @@ class Equipo_index(Page):# listado de jugadores, entrenadores, etc y partidos , 
     subpage_types = ['Equipo']
     template = "futbol/equipo_index_page.html"
     def save(self, *args, **kwargs):
-        # Calculate the points based on the results
-        self.puntos = self.partidos_ganados * 3 + self.partidos_empatados
-
-        # Save the instance
-        super().save(*args, **kwargs)
+        e = self.get_children().type(Equipo).all()
+        for equipo in e:
+            equipo.save()   
 
 class jugador(Page):
     nombre = models.CharField(max_length=250)
@@ -74,7 +72,10 @@ class jugador(Page):
         # Save the instance
         super().save(*args, **kwargs)
 
-
+class jugador_index_page(Page):
+    subpage_types = ['jugador']
+    template = "futbol/jugador_index_page.html"
+    
 class entrenador(Page):
     nombre = models.CharField(max_length=250)
     apellido = models.CharField(max_length=250)
@@ -97,8 +98,8 @@ class entrenador_index_page(Page):
     template = "futbol/entrenador_index_page.html"
 
 class Liga_Partidos_Page(Page):
-    equipo_local = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_local')
-    equipo_visitante = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_visitante')
+    equipo_local = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_local', choices=Equipo.objects.all())
+    equipo_visitante = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_visitante', choices=Equipo.objects.all())
     fecha = models.DateField()
     goles_local = models.IntegerField()
     goles_visitante = models.IntegerField()
