@@ -106,6 +106,12 @@ class partido(Page):
         FieldPanel('hora'),
         FieldPanel('lugar'),
     ]
+    def __save__(self, *args, **kwargs):
+        self.goles_equipo1 = 0
+        self.goles_equipo2 = 0
+        super(partido, self).save(*args, **kwargs)
+
+
     
 
 
