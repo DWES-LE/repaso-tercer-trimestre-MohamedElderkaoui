@@ -41,14 +41,20 @@ class Equipo(Page):# listado de jugadores, entrenadores, etc y partidos , partid
 class Equipo_index(Page):# listado de jugadores, entrenadores, etc y partidos , partidos jugados, ganados, perdidos, etc
     subpage_types = ['Equipo']
     template = "futbol/equipo_index_page.html"
+    def save(self, *args, **kwargs):
+        # Calculate the points based on the results
+        self.puntos = self.partidos_ganados * 3 + self.partidos_empatados
 
+        # Save the instance
+        super().save(*args, **kwargs)
 
 class jugador(Page):
     nombre = models.CharField(max_length=250)
     apellido = models.CharField(max_length=250)
     numero = models.IntegerField()
+    edad = models.IntegerField(default=18)
+    sexo = models.CharField(max_length=1, choices=(('M', 'Masculino'), ('F', 'Femenino')))
     imagen = models.ImageField(upload_to='images/')
-    contenido = RichTextField(blank=True)
     #equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
     parent_page_types = ['Equipo']
     subpage_types = []
@@ -58,9 +64,15 @@ class jugador(Page):
         FieldPanel('apellido'),
         FieldPanel('numero'),
         FieldPanel('imagen'),
-        FieldPanel('contenido'),
+        FieldPanel('edad'),
        # FieldPanel('equipo'),
     ]
+    def save(self, *args, **kwargs):
+        # Calculate the points based on the results
+        self.numero = self.numero + 1
+
+        # Save the instance
+        super().save(*args, **kwargs)
 
 
 class entrenador(Page):
@@ -84,6 +96,34 @@ class entrenador_index_page(Page):
     subpage_types = ['entrenador']
     template = "futbol/entrenador_index_page.html"
 
+class Liga_Partidos_Page(Page):
+    equipo_local = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_local')
+    equipo_visitante = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_visitante')
+    fecha = models.DateField()
+    goles_local = models.IntegerField()
+    goles_visitante = models.IntegerField()
+    parent_page_types = ['Liga_Clasificacion_Page']
+    subpage_types = []
+    template = "futbol/liga_partidos_page.html"
+    content_panels = Page.content_panels + [
+        FieldPanel('equipo_local'),
+        FieldPanel('equipo_visitante'),
+        FieldPanel('fecha'),
+        FieldPanel('goles_local'),
+        FieldPanel('goles_visitante'),
+    ]
+    def save(self, *args, **kwargs):
+        # Custom logic or calculations before saving
+        # For example, updating the result based on the goals scored
+        if self.goles_local > self.goles_visitante:
+            self.resultado = 'Local'
+        elif self.goles_local < self.goles_visitante:
+            self.resultado = 'Visitante'
+        else:
+            self.resultado = 'Empate'
+
+        # Save the instance
+        super().save(*args, **kwargs)
 
 class Liga_Clasificacion_Page(Page):
     nombre = models.CharField(max_length=250)
@@ -104,20 +144,54 @@ class Liga_Clasificacion_Page(Page):
         FieldPanel('imagen'),
         FieldPanel('contenido'),
         FieldPanel('equipos'),
+        FieldPanel('puntos'),
         FieldPanel('partidos_jugados'),
         FieldPanel('partidos_ganados'),
         FieldPanel('partidos_empatados'),
-        FieldPanel('partidos_perdidos'),
+        FieldPanel('partidos_perdidos'),    
         FieldPanel('goles_favor'),
         FieldPanel('goles_contra'),
     ]
-    
     def save(self, *args, **kwargs):
-        # Calculate the points based on the results
-        self.puntos = self.partidos_ganados * 3 + self.partidos_empatados
+        super().save(*args, **kwargs)  # Save the instance first to ensure it has an ID
 
-        # Save the instance
-        super().save(*args, **kwargs)
-class Liga_Clasificacion_Index_Page(Page):
+        # Iterate through all the matches (child pages of type Liga_Partidos_Page)
+        matches = self.get_children().type(Liga_Partidos_Page)
+        for match in matches:
+            equipo_local = match.equipo_local
+            equipo_visitante = match.equipo_visitante
+            goles_local = match.goles_local
+            goles_visitante = match.goles_visitante
+
+            # Update the teams' statistics based on the match result
+            equipo_local.partidos_jugados += 1
+            equipo_visitante.partidos_jugados += 1
+
+            if goles_local > goles_visitante:
+                equipo_local.partidos_ganados += 1
+                equipo_local.puntos += 3
+                equipo_visitante.partidos_perdidos += 1
+            elif goles_local < goles_visitante:
+                equipo_visitante.partidos_ganados += 1
+                equipo_visitante.puntos += 3
+                equipo_local.partidos_perdidos += 1
+            else:
+                equipo_local.partidos_empatados += 1
+                equipo_local.puntos += 1
+                equipo_visitante.partidos_empatados += 1
+                equipo_visitante.puntos += 1
+
+            # Update goals scored and goals conceded
+            equipo_local.goles_favor += goles_local
+            equipo_local.goles_contra += goles_visitante
+            equipo_visitante.goles_favor += goles_visitante
+            equipo_visitante.goles_contra += goles_local
+
+            # Save the updated teams
+            equipo_local.save()
+            equipo_visitante.save()
+
+class Liga_Index_Page(Page):
     subpage_types = ['Liga_Clasificacion_Page']
-    template = "futbol/liga_clasificacion_index_page.html"
+    template = "futbol/liga_index_page.html"
+    
