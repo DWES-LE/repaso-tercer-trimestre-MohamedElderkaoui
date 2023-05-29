@@ -24,20 +24,8 @@ from blog.models import BlogPageTag
 
 
 # Create your models here.
-class liga(Page):
-    nombre = models.CharField(max_length=250)
-    imagen = models.ImageField(upload_to='images/')
-    contenido = RichTextField(blank=True)
-    subpage_types = ['equipo']
-    template = "futbol/liga_page.html"
-    
-    content_panels = Page.content_panels + [
-        FieldPanel('nombre'),
-        FieldPanel('imagen'),
-        FieldPanel('contenido'),
-    ]
 
-class equipo(Page):# listado de jugadores, entrenadores, etc y partidos , partidos jugados, ganados, perdidos, etc
+class Equipo(Page):# listado de jugadores, entrenadores, etc y partidos , partidos jugados, ganados, perdidos, etc
     nombre = models.CharField(max_length=250)
     imagen = models.ImageField(upload_to='images/')
     contenido = RichTextField(blank=True)
@@ -50,6 +38,10 @@ class equipo(Page):# listado de jugadores, entrenadores, etc y partidos , partid
         #FieldPanel('jugadores'),
         #FieldPanel('partidos'),
     ]
+class Equipo_index(Page):# listado de jugadores, entrenadores, etc y partidos , partidos jugados, ganados, perdidos, etc
+    subpage_types = ['Equipo']
+    template = "futbol/equipo_index_page.html"
+
 
 class jugador(Page):
     nombre = models.CharField(max_length=250)
@@ -57,8 +49,8 @@ class jugador(Page):
     numero = models.IntegerField()
     imagen = models.ImageField(upload_to='images/')
     contenido = RichTextField(blank=True)
-    equipo = models.ForeignKey('equipo', on_delete=models.CASCADE)
-    parent_page_types = ['equipo']
+    #equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
+    parent_page_types = ['Equipo']
     subpage_types = []
     template = "futbol/jugador_page.html"
     content_panels = Page.content_panels + [
@@ -67,6 +59,7 @@ class jugador(Page):
         FieldPanel('numero'),
         FieldPanel('imagen'),
         FieldPanel('contenido'),
+       # FieldPanel('equipo'),
     ]
 
 
@@ -75,8 +68,8 @@ class entrenador(Page):
     apellido = models.CharField(max_length=250)
     imagen = models.ImageField(upload_to='images/')
     contenido = RichTextField(blank=True)
-    equipo = models.ForeignKey('equipo', on_delete=models.CASCADE)
-    parent_page_types = ['equipo']
+    #equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
+    parent_page_types = ['Equipo']
     subpage_types = []
     template = "futbol/entrenador_page.html"
 
@@ -85,34 +78,12 @@ class entrenador(Page):
         FieldPanel('apellido'),
         FieldPanel('imagen'),
         FieldPanel('contenido'),
+        #FieldPanel('equipo'),
     ]
-    
-class partido(Page):
-    equipo1 = models.ForeignKey('equipo', on_delete=models.CASCADE, related_name='equipo1')
-    equipo2 = models.ForeignKey('equipo', on_delete=models.CASCADE, related_name='equipo2')
-    fecha = models.DateField()
-    hora = models.TimeField()
-    lugar = models.CharField(max_length=250)
-    goles_equipo1 = models.IntegerField()
-    goles_equipo2 = models.IntegerField()
-    
-    parent_page_types = ['equipo']
-    subpage_types = []
-    template = "futbol/partido_page.html"
-    content_panels = Page.content_panels + [
-        FieldPanel('equipo1'),
-        FieldPanel('equipo2'),
-        FieldPanel('fecha'),
-        FieldPanel('hora'),
-        FieldPanel('lugar'),
-    ]
-    def __save__(self, *args, **kwargs):
-        self.goles_equipo1 = 0
-        self.goles_equipo2 = 0
-        super(partido, self).save(*args, **kwargs)
+class entrenador_index_page(Page):
+    subpage_types = ['entrenador']
+    template = "futbol/entrenador_index_page.html"
 
-
-    
 
 
 
