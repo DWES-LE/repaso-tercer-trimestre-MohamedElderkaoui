@@ -1,7 +1,13 @@
-
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
 
 {% block content %}
-
+  <div class="container">
+    <h1>Liga Index Page</h1>
+    <ul>
+      {% for subpage in page.get_children %}
+        <li><a href="{{ subpage.url }}">{{ subpage.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

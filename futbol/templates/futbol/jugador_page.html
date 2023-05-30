@@ -1,7 +1,20 @@
-
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
 
 {% block content %}
-
+  <div class="container">
+    <h1>{{ page.nombre }} {{ page.apellido }}</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{ page.imagen.url }}" alt="Jugador Image" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Número:</strong> {{ page.numero }}</li>
+          <li class="list-group-item"><strong>Edad:</strong> {{ page.edad }}</li>
+          <li class="list-group-item"><strong>Sexo:</strong> {{ page.get_sexo_display }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 {% endblock %}

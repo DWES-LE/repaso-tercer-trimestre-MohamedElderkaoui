@@ -1,7 +1,10 @@
-
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
 
 {% block content %}
-
+  <h1>{{ page.nombre }}</h1>
+  <img src="{{ page.imagen.url }}" alt="Equipo Image">
+  <div>
+    {{ page.contenido|richtext }}
+  </div>
 {% endblock %}
