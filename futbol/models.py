@@ -38,6 +38,7 @@ class Equipo(Page):# listado de jugadores, entrenadores, etc y partidos , partid
         #FieldPanel('jugadores'),
         #FieldPanel('partidos'),
     ]
+    
 class Equipo_index(Page):# listado de jugadores, entrenadores, etc y partidos , partidos jugados, ganados, perdidos, etc
     subpage_types = ['Equipo']
     template = "futbol/equipo_index_page.html"
