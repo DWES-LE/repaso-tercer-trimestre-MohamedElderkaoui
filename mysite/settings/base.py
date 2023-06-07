@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     # my apps
     "blog",
     "persona",
-    "futbol"
+    "futbol",
      "politica",
 ]
 
