@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     "blog",
     "persona",
     "futbol"
-    "politica",
+     "politica",
 ]
 
 MIDDLEWARE = [
