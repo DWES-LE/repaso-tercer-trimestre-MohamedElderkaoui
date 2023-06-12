@@ -8,12 +8,12 @@
 },
 {
   "model": "wagtailcore.site",
-  "pk": 3,
+  "pk": 2,
   "fields": {
     "hostname": "localhost",
     "port": 80,
-    "site_name": "mohamed",
-    "root_page": 7,
+    "site_name": "",
+    "root_page": 3,
     "is_default_site": true
   }
 },
@@ -61,34 +61,6 @@
   "fields": {
     "name": "Moderators approval",
     "active": true
-  }
-},
-{
-  "model": "taggit.tag",
-  "pk": 1,
-  "fields": {
-    "name": "srf",
-    "slug": "srf"
-  }
-},
-{
-  "model": "taggit.tag",
-  "pk": 2,
-  "fields": {
-    "name": "dfs",
-    "slug": "dfs"
-  }
-},
-{
-  "model": "taggit.taggeditem",
-  "pk": 1,
-  "fields": {
-    "tag": 2,
-    "content_type": [
-      "wagtailimages",
-      "image"
-    ],
-    "object_id": 1
   }
 },
 {
@@ -193,8 +165,26 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$600000$pfwHcTEr8xj0ictwqz8XWf$9A7ltDsBonE7QL2RM+ajtAn59WVLJEraA8+a9KIlx3Y=",
-    "last_login": "2023-05-22T07:12:55.966Z",
+    "password": "pbkdf2_sha256$600000$Y5BNXICO7Xn4k99sqGLSVw$GvTb+HuxJkG0aJNWzm4V1H+WVE1CVrPoeCXJvc0okfE=",
+    "last_login": "2023-05-22T19:00:55.380Z",
+    "is_superuser": true,
+    "username": "mo",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-05-22T18:59:34.511Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$CXMzgssTqmoxiggwDVFaVk$9KH/NyovkgVOtkHZDWAlTk1w8erVlEeX/Fyly3IzX2k=",
+    "last_login": "2023-06-12T06:58:48.532Z",
     "is_superuser": true,
     "username": "mohamed",
     "first_name": "",
@@ -202,41 +192,81 @@
     "email": "mderkaoui10@gmail.com",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2023-05-22T07:11:53.084Z",
+    "date_joined": "2023-06-12T06:58:11.892Z",
     "groups": [],
     "user_permissions": []
   }
 },
 {
   "model": "blog.blogindexpage",
-  "pk": 10,
+  "pk": 4,
   "fields": {
     "intro": ""
   }
 },
 {
-  "model": "persona.persona",
-  "pk": 9,
+  "model": "persona.personaindexpage",
+  "pk": 5,
   "fields": {
-    "nombre": "1EW",
-    "apellidos": "DWDA",
-    "fecha_nacimiento": "2023-05-09",
-    "lugar_nacimiento": "DEWC",
-    "biografia": "<p data-block-key=\"hlwnq\"> &lt;DD</p>",
-    "foto": "persona/FlBI0ASXEAIqD48.2e16d0ba.fill-320x240.jpg",
-    "twitter": "",
-    "facebook": "",
-    "instagram": "",
-    "linkedin": "",
-    "body": "",
-    "into": ""
+    "intro": "<p data-block-key=\"ge0us\">Lista de mohamed</p>"
   }
 },
 {
-  "model": "persona.personaindexpage",
+  "model": "futbol.equipo",
   "pk": 8,
   "fields": {
-    "intro": "<p data-block-key=\"p6h0e\">ef</p>"
+    "nombre": "ejea",
+    "imagen": "images/ejea.jpg",
+    "contenido": "<p data-block-key=\"69ciu\">hola que tal</p><p data-block-key=\"98l0o\"></p>"
+  }
+},
+{
+  "model": "futbol.equipo",
+  "pk": 10,
+  "fields": {
+    "nombre": "lkdf",
+    "imagen": "images/descarga_vmLUNYP.png",
+    "contenido": ""
+  }
+},
+{
+  "model": "futbol.equipo_index",
+  "pk": 6,
+  "fields": {}
+},
+{
+  "model": "futbol.jugador",
+  "pk": 9,
+  "fields": {
+    "nombre": "swqd",
+    "apellido": "wqd",
+    "numero": 1,
+    "edad": 18,
+    "sexo": "M",
+    "imagen": "images/licensed-image.jfif"
+  }
+},
+{
+  "model": "futbol.jugador",
+  "pk": 11,
+  "fields": {
+    "nombre": "k",
+    "apellido": "b",
+    "numero": 19,
+    "edad": 18,
+    "sexo": "M",
+    "imagen": "images/licensed-image_afOelXz.jfif"
+  }
+},
+{
+  "model": "politica.eleccion",
+  "pk": 12,
+  "fields": {
+    "nombre": "Politica2023",
+    "fecha": "2023-05-27",
+    "descripcion": "<p data-block-key=\"d7bnv\">sw</p>",
+    "numero_votos": 40000,
+    "region_pueblo_comunidad": "w2dq"
   }
 },
 {
@@ -334,7 +364,7 @@
     "path": "0001",
     "depth": 1,
     "numchild": 1,
-    "translation_key": "1514a42c-6450-4ce4-ae17-b9db2c32bb8a",
+    "translation_key": "5d184217-d98c-42ad-b14b-758200d29920",
     "locale": 1,
     "latest_revision": null,
     "live": true,
@@ -366,136 +396,56 @@
 },
 {
   "model": "wagtailcore.page",
-  "pk": 7,
+  "pk": 3,
   "fields": {
     "path": "00010001",
     "depth": 2,
-    "numchild": 2,
-    "translation_key": "cf9b791d-0bf1-497a-a052-a56110b3701f",
+    "numchild": 5,
+    "translation_key": "2faae2c1-5dd5-4e57-8aeb-bfe2abb0d0d5",
     "locale": 1,
-    "latest_revision": 5,
+    "latest_revision": 1,
     "live": true,
     "has_unpublished_changes": false,
-    "first_published_at": "2023-05-22T08:02:27.914Z",
-    "last_published_at": "2023-05-22T08:02:47.022Z",
-    "live_revision": 5,
+    "first_published_at": "2023-05-22T19:01:28.617Z",
+    "last_published_at": "2023-05-22T19:01:28.617Z",
+    "live_revision": 1,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
     "locked": false,
     "locked_at": null,
     "locked_by": null,
-    "title": "home",
-    "draft_title": "home",
+    "title": "Home",
+    "draft_title": "Home",
     "slug": "home",
     "content_type": [
       "home",
       "homepage"
     ],
     "url_path": "/home/",
-    "owner": [
-      "mohamed"
-    ],
+    "owner": null,
     "seo_title": "",
     "show_in_menus": false,
     "search_description": "",
-    "latest_revision_created_at": "2023-05-22T08:02:46.992Z",
+    "latest_revision_created_at": "2023-05-22T19:01:28.505Z",
     "alias_of": null
   }
 },
 {
   "model": "wagtailcore.page",
-  "pk": 8,
+  "pk": 4,
   "fields": {
     "path": "000100010001",
     "depth": 3,
-    "numchild": 1,
-    "translation_key": "e50f5743-9485-40fa-98da-f8dab97a04d3",
-    "locale": 1,
-    "latest_revision": 8,
-    "live": true,
-    "has_unpublished_changes": false,
-    "first_published_at": "2023-05-22T08:03:24.457Z",
-    "last_published_at": "2023-05-22T08:22:53.948Z",
-    "live_revision": 8,
-    "go_live_at": null,
-    "expire_at": null,
-    "expired": false,
-    "locked": false,
-    "locked_at": null,
-    "locked_by": null,
-    "title": "persona",
-    "draft_title": "persona",
-    "slug": "personas",
-    "content_type": [
-      "persona",
-      "personaindexpage"
-    ],
-    "url_path": "/home/personas/",
-    "owner": [
-      "mohamed"
-    ],
-    "seo_title": "",
-    "show_in_menus": false,
-    "search_description": "",
-    "latest_revision_created_at": "2023-05-22T08:22:53.908Z",
-    "alias_of": null
-  }
-},
-{
-  "model": "wagtailcore.page",
-  "pk": 9,
-  "fields": {
-    "path": "0001000100010001",
-    "depth": 4,
     "numchild": 0,
-    "translation_key": "82e20be8-f4e7-42a2-85ed-30bcb68a8b63",
+    "translation_key": "6d06ef38-153d-4ba6-908c-f7dd1be4ca11",
     "locale": 1,
-    "latest_revision": 7,
+    "latest_revision": 2,
     "live": true,
     "has_unpublished_changes": false,
-    "first_published_at": "2023-05-22T08:04:18.974Z",
-    "last_published_at": "2023-05-22T08:04:18.974Z",
-    "live_revision": 7,
-    "go_live_at": null,
-    "expire_at": null,
-    "expired": false,
-    "locked": false,
-    "locked_at": null,
-    "locked_by": null,
-    "title": "CD",
-    "draft_title": "CD",
-    "slug": "cd",
-    "content_type": [
-      "persona",
-      "persona"
-    ],
-    "url_path": "/home/personas/cd/",
-    "owner": [
-      "mohamed"
-    ],
-    "seo_title": "",
-    "show_in_menus": false,
-    "search_description": "",
-    "latest_revision_created_at": "2023-05-22T08:04:18.940Z",
-    "alias_of": null
-  }
-},
-{
-  "model": "wagtailcore.page",
-  "pk": 10,
-  "fields": {
-    "path": "000100010002",
-    "depth": 3,
-    "numchild": 0,
-    "translation_key": "2edd8366-ba65-46d3-8651-4a3d3d3a6561",
-    "locale": 1,
-    "latest_revision": 9,
-    "live": true,
-    "has_unpublished_changes": false,
-    "first_published_at": "2023-05-22T08:35:10.017Z",
-    "last_published_at": "2023-05-22T08:35:10.017Z",
-    "live_revision": 9,
+    "first_published_at": "2023-05-22T19:01:45.887Z",
+    "last_published_at": "2023-05-22T19:01:45.887Z",
+    "live_revision": 2,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
@@ -511,34 +461,286 @@
     ],
     "url_path": "/home/blog/",
     "owner": [
+      "mo"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-05-22T19:01:45.785Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 5,
+  "fields": {
+    "path": "000100010002",
+    "depth": 3,
+    "numchild": 0,
+    "translation_key": "2a330a5d-5e2a-4b9f-a427-27a7414d6bef",
+    "locale": 1,
+    "latest_revision": 3,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-05-22T19:02:13.532Z",
+    "last_published_at": "2023-05-22T19:02:13.532Z",
+    "live_revision": 3,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Personas",
+    "draft_title": "Personas",
+    "slug": "personas",
+    "content_type": [
+      "persona",
+      "personaindexpage"
+    ],
+    "url_path": "/home/personas/",
+    "owner": [
+      "mo"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-05-22T19:02:13.412Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 6,
+  "fields": {
+    "path": "000100010003",
+    "depth": 3,
+    "numchild": 2,
+    "translation_key": "dc261ca6-7b3e-4fe6-a6e8-745d21ebb828",
+    "locale": 1,
+    "latest_revision": 4,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-06-12T07:09:33.067Z",
+    "last_published_at": "2023-06-12T07:09:33.067Z",
+    "live_revision": 4,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "liga santader",
+    "draft_title": "liga santader",
+    "slug": "liga-santader",
+    "content_type": [
+      "futbol",
+      "equipo_index"
+    ],
+    "url_path": "/home/liga-santader/",
+    "owner": [
       "mohamed"
     ],
     "seo_title": "",
     "show_in_menus": false,
     "search_description": "",
-    "latest_revision_created_at": "2023-05-22T08:35:09.978Z",
+    "latest_revision_created_at": "2023-06-12T07:09:33.031Z",
     "alias_of": null
   }
 },
 {
-  "model": "wagtailimages.image",
-  "pk": 1,
+  "model": "wagtailcore.page",
+  "pk": 8,
   "fields": {
-    "collection": 1,
-    "title": "FlBTuKhXgAIutmN.2e16d0ba.fill-320x240",
-    "file": "original_images/FlBTuKhXgAIutmN.2e16d0ba.fill-320x240.jpg",
-    "width": 320,
-    "height": 240,
-    "created_at": "2023-05-22T08:36:03.137Z",
-    "uploaded_by_user": [
+    "path": "0001000100030002",
+    "depth": 4,
+    "numchild": 1,
+    "translation_key": "b1ccc1b5-943d-4813-9cb6-0f4565401192",
+    "locale": 1,
+    "latest_revision": 6,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-06-12T07:52:49.832Z",
+    "last_published_at": "2023-06-12T07:52:49.832Z",
+    "live_revision": 6,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Ejea",
+    "draft_title": "Ejea",
+    "slug": "ejea",
+    "content_type": [
+      "futbol",
+      "equipo"
+    ],
+    "url_path": "/home/liga-santader/ejea/",
+    "owner": [
       "mohamed"
     ],
-    "focal_point_x": null,
-    "focal_point_y": null,
-    "focal_point_width": null,
-    "focal_point_height": null,
-    "file_size": 28044,
-    "file_hash": "a65dcc43dc52b8ffb56be39c8f1a65ccbc6c36a2"
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-06-12T07:52:49.795Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 9,
+  "fields": {
+    "path": "00010001000300020001",
+    "depth": 5,
+    "numchild": 0,
+    "translation_key": "70a61353-0eaf-498e-a28e-c0e820ba84ef",
+    "locale": 1,
+    "latest_revision": 7,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-06-12T07:54:19.879Z",
+    "last_published_at": "2023-06-12T07:54:19.879Z",
+    "live_revision": 7,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "jiksq",
+    "draft_title": "jiksq",
+    "slug": "jiksq",
+    "content_type": [
+      "futbol",
+      "jugador"
+    ],
+    "url_path": "/home/liga-santader/ejea/jiksq/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-06-12T07:54:19.824Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 10,
+  "fields": {
+    "path": "0001000100030003",
+    "depth": 4,
+    "numchild": 1,
+    "translation_key": "38fb9066-2944-4ceb-96d7-b2d93d4f5ef8",
+    "locale": 1,
+    "latest_revision": 8,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-06-12T08:17:27.174Z",
+    "last_published_at": "2023-06-12T08:17:27.174Z",
+    "live_revision": 8,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "real Madrid",
+    "draft_title": "real Madrid",
+    "slug": "real-madrid",
+    "content_type": [
+      "futbol",
+      "equipo"
+    ],
+    "url_path": "/home/liga-santader/real-madrid/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-06-12T08:17:27.106Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 11,
+  "fields": {
+    "path": "00010001000300030001",
+    "depth": 5,
+    "numchild": 0,
+    "translation_key": "a890006e-4036-4540-bc2d-58424d85d863",
+    "locale": 1,
+    "latest_revision": 9,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-06-12T08:18:20.339Z",
+    "last_published_at": "2023-06-12T08:18:20.339Z",
+    "live_revision": 9,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "k",
+    "draft_title": "k",
+    "slug": "k",
+    "content_type": [
+      "futbol",
+      "jugador"
+    ],
+    "url_path": "/home/liga-santader/real-madrid/k/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-06-12T08:18:20.300Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 12,
+  "fields": {
+    "path": "000100010004",
+    "depth": 3,
+    "numchild": 1,
+    "translation_key": "008980f9-cb10-41ef-b655-21cba6def043",
+    "locale": 1,
+    "latest_revision": 10,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2023-06-12T08:21:45.963Z",
+    "last_published_at": "2023-06-12T08:21:45.963Z",
+    "live_revision": 10,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Politica",
+    "draft_title": "Politica",
+    "slug": "politica",
+    "content_type": [
+      "politica",
+      "eleccion"
+    ],
+    "url_path": "/home/politica/",
+    "owner": [
+      "mohamed"
+    ],
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2023-06-12T08:21:45.926Z",
+    "alias_of": null
   }
 },
 {
@@ -555,53 +757,15 @@
     "preferred_language": "",
     "current_time_zone": "",
     "avatar": "",
-    "dismissibles": {
-      "help": true,
-      "whats-new-in-wagtail-5.0": true,
-      "editor-guide": true
-    },
+    "dismissibles": {},
     "theme": "system"
   }
 },
 {
-  "model": "wagtailredirects.redirect",
-  "pk": 1,
-  "fields": {
-    "old_path": "/persona",
-    "site": [
-      "localhost",
-      80
-    ],
-    "is_permanent": true,
-    "redirect_page": 8,
-    "redirect_page_route_path": "",
-    "redirect_link": "",
-    "automatically_created": true,
-    "created_at": "2023-05-22T08:22:53.978Z"
-  }
-},
-{
-  "model": "wagtailredirects.redirect",
-  "pk": 2,
-  "fields": {
-    "old_path": "/persona/cd",
-    "site": [
-      "localhost",
-      80
-    ],
-    "is_permanent": true,
-    "redirect_page": 9,
-    "redirect_page_route_path": "",
-    "redirect_link": "",
-    "automatically_created": true,
-    "created_at": "2023-05-22T08:22:53.978Z"
-  }
-},
-{
   "model": "home.homepage",
-  "pk": 7,
+  "pk": 3,
   "fields": {
-    "body": "<p data-block-key=\"tgvyg\">cqs</p>"
+    "body": "<p data-block-key=\"yvb75\">Sitio de Mohamed</p>"
   }
 }
 ]
