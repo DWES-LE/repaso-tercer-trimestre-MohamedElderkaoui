@@ -30,11 +30,16 @@ class Eleccion(Page):
     fecha = models.DateField()
     descripcion = RichTextField()
     numero_votos = models.IntegerField(default=0)
+    region_pueblo_comunidad = models.CharField(max_length=100)
+    tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     
     content_panels = Page.content_panels + [
         FieldPanel('nombre'),
         FieldPanel('fecha'),
         FieldPanel('descripcion'),
+        FieldPanel('region_pueblo_comunidad'),
+        FieldPanel('numero_votos'),
+        
     ]
 
     def __str__(self):
@@ -48,6 +53,8 @@ class Partido(Page):
     descripcion = RichTextField()
     numero_votos = models.IntegerField(default=0)
     elecciones = models.ForeignKey(Eleccion, on_delete=models.CASCADE)
+    tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
+    
     template = "politica/partido_page.html"
 
     content_panels = Page.content_panels + [
