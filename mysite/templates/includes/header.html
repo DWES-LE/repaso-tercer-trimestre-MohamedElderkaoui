@@ -32,5 +32,34 @@
                 </ul>
             </div>
         </div>
+        <!-- 
+            dos botones para ir a la pagina anterior y a la siguiente
+         -->
+        <div>
+            <button onclick="goBack()" id="myBtn" title="Go to top">Back</button>
+            <button onclick="goForward()" id="myBtn" title="Go to bottom">Forward</button>
+        </div>
+        <!-- 
+            dos botones para ir a la pagina hija sisguente y a la pagina padre ULR OF WAGTAIL {{ page.get_parent.url }}
+         -->
+        {% if page.get_next_sibling %}
+            <a href="{{ page.get_next_sibling.url }}">Next</a>
+        {% endif %}
+        
+        {% if page.get_parent %}
+            <a href="{{ page.get_parent.url }}">Parent</a>
+        {% endif %}
+         
+         
     </nav>
+    <script>
+        // When the user clicks on the button, go back to the previous page
+        function goBack() {
+          window.history.back();
+        }
+        // When the user clicks on the button, go forward to the next page
+        function goForward() {
+          window.history.forward();
+        }
+    </script>
 </header>

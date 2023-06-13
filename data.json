@@ -28,6 +28,75 @@
   }
 },
 {
+  "model": "wagtailcore.referenceindex",
+  "pk": 1,
+  "fields": {
+    "content_type": [
+      "wagtailimages",
+      "image"
+    ],
+    "base_content_type": [
+      "wagtailimages",
+      "image"
+    ],
+    "object_id": "1",
+    "to_content_type": [
+      "wagtailcore",
+      "collection"
+    ],
+    "to_object_id": "1",
+    "model_path": "collection",
+    "content_path": "collection",
+    "content_path_hash": "b40b1263-e929-57f2-a7f8-9dbce56b887b"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 4,
+  "fields": {
+    "content_type": [
+      "blog",
+      "blogpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "10",
+    "to_content_type": [
+      "wagtailimages",
+      "image"
+    ],
+    "to_object_id": "1",
+    "model_path": "gallery_images.item.image",
+    "content_path": "gallery_images.1.image",
+    "content_path_hash": "43650d34-ff5a-57e1-8285-1d1a3528d2c8"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 5,
+  "fields": {
+    "content_type": [
+      "blog",
+      "blogpage"
+    ],
+    "base_content_type": [
+      "wagtailcore",
+      "page"
+    ],
+    "object_id": "10",
+    "to_content_type": [
+      "taggit",
+      "tag"
+    ],
+    "to_object_id": "1",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.1.tag",
+    "content_path_hash": "0a1d4af4-028a-541c-9ba8-bcfab5741d17"
+  }
+},
+{
   "model": "wagtailcore.workflowpage",
   "pk": 1,
   "fields": {
