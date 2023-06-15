@@ -52,6 +52,7 @@ class Partido(Page):
     lider = models.CharField(max_length=100)
     descripcion = RichTextField()
     numero_votos = models.IntegerField(default=0)
+    logo = models.ImageField(upload_to='logos_partidos', blank=True)
 
     
     template = "politica/partido_page.html"
@@ -61,7 +62,11 @@ class Partido(Page):
         FieldPanel('fundacion'),
         FieldPanel('lider'),
         FieldPanel('descripcion'),
+        FieldPanel('numero_votos'),
+        FieldPanel('logo'),
     ]
-
- 
+    
+class Lista_Eleccion(Page):
+    subpage_types = [Eleccion]
+    template = "politica/lista_eleccion_page.html"
             

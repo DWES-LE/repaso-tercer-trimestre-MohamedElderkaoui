@@ -6,12 +6,12 @@ from wagtail.admin.panels import FieldPanel
 from persona.models import PersonaIndexPage
 from blog.models import BlogIndexPage
 from futbol.models import Equipo_index
-from politica.models import Eleccion
+from politica.models import Lista_Eleccion
 
 class HomePage(Page):
     body = RichTextField(blank=True)
     
-    subpage_types = [ PersonaIndexPage, BlogIndexPage ,Equipo_index,Eleccion ]
+    subpage_types = [ PersonaIndexPage, BlogIndexPage ,Equipo_index,Lista_Eleccion ]
     content_panels = Page.content_panels + [
         FieldPanel('body'),
     ]
