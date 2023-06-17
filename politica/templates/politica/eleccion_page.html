@@ -1,91 +1,45 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load static %}
 
 {% block content %}
-<div class="container">
-  <h1>{{ page.title }}</h1>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Election Information</h5>
-          <p class="card-text"><strong>Name:</strong> {{ page.nombre }}</p>
-          <p class="card-text"><strong>Date:</strong> {{ page.fecha }}</p>
-          <p class="card-text"><strong>Description:</strong> {{ page.descripcion }}</p>
-          <p class="card-text"><strong>Region/Town/Community:</strong> {{ page.region_pueblo_comunidad }}</p>
-          <p class="card-text"><strong>Number of Votes:</strong> {{ page.numero_votos }}</p>
-          <!--  
-            ir a la pagina de la lista de partidos
-           -->
-           {% for subpage in page.get_children %}
-              <a href="{{ subpage.url }}" class="btn btn-primary">
-                {{ subpage.nombre }}
-                {{ subpage.logo }}  
-              </a>
-              {% endfor %}
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <canvas id="votesChart"></canvas>
-    </div>
-  </div>
-</div>
-<!-- acede page de partido -->
-{% for subpage in page.get_children %}
-  <a href="{{ subpage.url }}" class="btn btn-primary">
-    {{ subpage.nombre }}
-    {{ subpage.logo }}  
-  </a>
-  {% endfor %}
-
-{% endblock %}
-
-{% block scripts %}
-{{ block.super }}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
-<script>
-  $(document).ready(function() {
-    // Retrieve vote data from the server
-    $.ajax({
-      url: '{% url "get_vote_data" %}', // Replace with the URL that retrieves the vote data
-      method: 'GET',
-      success: function(response) {
-        // Structure the vote data properly
-        var voteData = response.map(function(item) {
-          return { label: item.party, votes: item.votes };
-        });
-
-        // Create the votes chart
-        var votesChart = new Chart(document.getElementById('votesChart'), {
-          type: 'bar',
-          data: {
-            labels: voteData.map(item => item.label),
-            datasets: [{
-              label: 'Votes',
-              data: voteData.map(item => item.votes),
-              backgroundColor: 'rgba(75, 192, 192, 0.8)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
+  <h1>{{ page.nombre }}</h1>
+  <p>{{ page.descripcion }}</p>
+  
+  <canvas id="chart" width="400" height="200"></canvas>
+  
+  <script src="{% static 'chart.js/chart.min.js' %}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var ctx = document.getElementById("chart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Region 1', 'Region 2', 'Region 3'], // Reemplaza con tus etiquetas de región
+          datasets: [{
+            label: 'Número de Votos',
+            data: [{{ page.numero_votos_region1 }}, {{ page.numero_votos_region2 }}, {{ page.numero_votos_region3 }}], // Reemplaza con tus datos de votos por región
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
             }
           }
-        });
-      },
-      error: function() {
-        console.log('Failed to retrieve vote data.');
-      }
+        }
+      });
     });
-  });
-</script>
+  </script>
 {% endblock %}

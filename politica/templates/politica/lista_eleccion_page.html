@@ -1,6 +1,6 @@
-{% extends "wagtailadmin/base.html" %}
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
 
-{% load static wagtailcore_tags %}
 
 {% block content %}
 <div class="container">
@@ -22,10 +22,3 @@
 </div>
 {% endblock %}
 
-{% block extrastyle %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-{% endblock %}
-
-{% block extrahead %}
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-{% endblock %}
