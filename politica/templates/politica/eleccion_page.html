@@ -10,27 +10,32 @@
     <div class="col-md-6">
       <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title">Election Information</h5>
-          <p class="card-text"><strong>Name:</strong> {{ page.nombre }}</p>
-          <p class="card-text"><strong>Date:</strong> {{ page.fecha }}</p>
-          <p class="card-text"><strong>Description:</strong> {{ page.descripcion }}</p>
-          <p class="card-text"><strong>Region/Town/Community:</strong> {{ page.region_pueblo_comunidad }}</p>
-          <p class="card-text"><strong>Number of Votes:</strong> {{ page.numero_votos }}</p>
-          <!--  
-            ir a la pagina de la lista de partidos
-           -->
-           {% for subpage in page.get_children %}
-           <div class="card mb-3">
-            <div class="card-body">
-              <h4 class="card-title">{{ subpage.nombre }}</h4>
-              <p class="card-text">{{ subpage.descripcion }}</p>
-            </div>
-            <a href="{{ subpage.url }}" class="btn btn-primary">
-              {{ subpage.nombre }}
-              {{ subpage.logo }}  
-            </a>
-           </div>
-              {% endfor %}
+          <h5 class="card-title">Información de la Elección</h5>
+          <p class="card-text"><strong>Nombre:</strong> {{ page.nombre }}</p>
+          <p class="card-text"><strong>Fecha:</strong> {{ page.fecha }}</p>
+          <p class="card-text"><strong>Descripción:</strong> {{ page.descripcion }}</p>
+          <p class="card-text"><strong>Región/Pueblo/Comunidad:</strong> {{ page.region_pueblo_comunidad }}</p>
+          <p class="card-text"><strong>Número de Votos:</strong> {{ page.numero_votos }}</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista de Partidos</h5>
+          {% for subpage in page.get_children %}
+            {% if subpage.specific_class == "Partido" %}
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h4 class="card-title">{{ subpage.nombre }}</h4>
+                  <p class="card-text">{{ subpage.descripcion }}</p>
+                  {% if subpage.logo %}
+                    <img src="{{ subpage.logo.url }}" alt="{{ subpage.nombre }} Logo" class="img-fluid">
+                  {% endif %}
+                </div>
+                <a href="{{ subpage.url }}" class="btn btn-primary">Ver detalles</a>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -39,59 +44,70 @@
     </div>
   </div>
 </div>
-<!-- acede page de partido -->
-{% for subpage in page.get_children %}
-  <a href="{{ subpage.url }}" class="btn btn-primary">
-    {{ subpage.nombre }}
-    {{ subpage.logo }}  
-  </a>
-  {% endfor %}
 
 {% endblock %}
 
 {% block scripts %}
 {{ block.super }}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 <script>
-  $(document).ready(function() {
-    // Retrieve vote data from the server
-    $.ajax({
-      url: '{% url "get_vote_data" %}', // Replace with the URL that retrieves the vote data
-      method: 'GET',
-      success: function(response) {
-        // Structure the vote data properly
-        var voteData = response.map(function(item) {
-          return { label: item.party, votes: item.votes };
-        });
+  // Retrieve vote data from the server
+  const voteData = [
+    {% for subpage in page.get_children %}
+      {% if subpage.specific_class == "Partido" %}
+        { label: "{{ subpage.nombre }}", votes: {{ subpage.numero_votos }} },
+      {% endif %}
+    {% endfor %}
+  ];
 
-        // Create the votes chart
-        var votesChart = new Chart(document.getElementById('votesChart'), {
-          type: 'bar',
-          data: {
-            labels: voteData.map(item => item.label),
-            datasets: [{
-              label: 'Votes',
-              data: voteData.map(item => item.votes),
-              backgroundColor: 'rgba(75, 192, 192, 0.8)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
+  // Calculate total votes
+  const totalVotes = voteData.reduce((sum, item) => sum + item.votes, 0);
+
+  // Calculate percentages
+  const percentageData = voteData.map(item => ({
+    label: item.label,
+    percentage: (item.votes / totalVotes) * 100,
+  }));
+
+  // Create the votes chart
+  const votesChart = new Chart(document.getElementById('votesChart'), {
+    type: 'doughnut',
+    data: {
+      labels: percentageData.map(item => item.label),
+      datasets: [{
+        data: percentageData.map(item => item.percentage),
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.8)',
+          'rgba(54, 162, 235, 0.8)',
+          'rgba(255, 206, 86, 0.8)',
+          'rgba(75, 192, 192, 0.8)',
+          'rgba(153, 102, 255, 0.8)',
+        ],
+        borderColor: 'rgba(255, 255, 255, 1)',
+        borderWidth: 2,
+      }],
+    },
+    options: {
+      plugins: {
+        legend: {
+          position: 'right',
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => {
+              const label = context.label || '';
+
+              if (label) {
+                const percentage = context.dataset.data[context.dataIndex] || 0;
+                return `${label}: ${percentage.toFixed(2)}%`;
               }
-            }
-          }
-        });
+
+              return '';
+            },
+          },
+        },
       },
-      error: function() {
-        console.log('Failed to retrieve vote data.');
-      }
-    });
+    },
   });
 </script>
 {% endblock %}
