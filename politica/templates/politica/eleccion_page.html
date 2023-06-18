@@ -19,95 +19,66 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card mb-3">
         <div class="card-body">
           <h5 class="card-title">Lista de Partidos</h5>
           {% for subpage in page.get_children %}
-            {% if subpage.specific_class == "Partido" %}
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h4 class="card-title">{{ subpage.nombre }}</h4>
-                  <p class="card-text">{{ subpage.descripcion }}</p>
-                  {% if subpage.logo %}
-                    <img src="{{ subpage.logo.url }}" alt="{{ subpage.nombre }} Logo" class="img-fluid">
-                  {% endif %}
-                </div>
-                <a href="{{ subpage.url }}" class="btn btn-primary">Ver detalles</a>
-              </div>
-            {% endif %}
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">{{ subpage.nombre }}</h6>
+              <p class="card-text">{{ subpage.descripcion }}</p>
+            </div>
+            <a href="{{ subpage.url }}" class="btn btn-primary">
+              {{ subpage.nombre }}
+              <img src="{{ subpage.logo.url }}" alt="{{ subpage.nombre }} Logo">
+            </a>
+          </div>
           {% endfor %}
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
       <canvas id="votesChart"></canvas>
     </div>
   </div>
 </div>
 
-{% endblock %}
-
 {% block scripts %}
 {{ block.super }}
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 <script>
   // Retrieve vote data from the server
-  const voteData = [
-    {% for subpage in page.get_children %}
-      {% if subpage.specific_class == "Partido" %}
-        { label: "{{ subpage.nombre }}", votes: {{ subpage.numero_votos }} },
-      {% endif %}
-    {% endfor %}
-  ];
-
-  // Calculate total votes
-  const totalVotes = voteData.reduce((sum, item) => sum + item.votes, 0);
-
-  // Calculate percentages
-  const percentageData = voteData.map(item => ({
-    label: item.label,
-    percentage: (item.votes / totalVotes) * 100,
-  }));
-
+  const voteData = JSON.parse('{{ vote_data|escapejs }}');
   // Create the votes chart
   const votesChart = new Chart(document.getElementById('votesChart'), {
     type: 'doughnut',
     data: {
-      labels: percentageData.map(item => item.label),
+      labels: voteData.map(item => item.label),
       datasets: [{
-        data: percentageData.map(item => item.percentage),
+        label: 'Votes',
+        data: voteData.map(item => item.votes),
         backgroundColor: [
           'rgba(255, 99, 132, 0.8)',
           'rgba(54, 162, 235, 0.8)',
           'rgba(255, 206, 86, 0.8)',
           'rgba(75, 192, 192, 0.8)',
           'rgba(153, 102, 255, 0.8)',
+          'rgba(255, 159, 64, 0.8)'
         ],
         borderColor: 'rgba(255, 255, 255, 1)',
-        borderWidth: 2,
-      }],
+        borderWidth: 2
+      }]
     },
     options: {
       plugins: {
         legend: {
-          position: 'right',
-        },
-        tooltip: {
-          callbacks: {
-            label: (context) => {
-              const label = context.label || '';
-
-              if (label) {
-                const percentage = context.dataset.data[context.dataIndex] || 0;
-                return `${label}: ${percentage.toFixed(2)}%`;
-              }
-
-              return '';
-            },
-          },
-        },
-      },
-    },
+          position: 'right'
+        }
+      }
+    }
   });
 </script>
 {% endblock %}
+{% endblock %}
+

@@ -5,62 +5,23 @@
 {% block content %}
 <div class="container">
   <h1>{{ page.title }}</h1>
-  <a href="{% slugurl 'partidos' %}" class="btn btn-primary">Back to Parties</a>
+
   <div class="row">
     <div class="col-md-6">
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="card-title">Party Information</h5>
           <p class="card-text"><strong>Name:</strong> {{ page.nombre }}</p>
-          <p class="card-text"><strong>Foundation:</strong> {{ page.fundacion }}</p>
+          <p class="card-text"><strong>Foundation Date:</strong> {{ page.fundacion }}</p>
           <p class="card-text"><strong>Leader:</strong> {{ page.lider }}</p>
           <p class="card-text"><strong>Description:</strong> {{ page.descripcion }}</p>
+          <p class="card-text"><strong>Number of Votes:</strong> {{ page.numero_votos }}</p>
+          {% if page.logo %}
+          <img src="{{ page.logo.url }}" alt="{{ page.nombre }} Logo" class="img-fluid">
+          {% endif %}
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <canvas id="partyVotesChart"></canvas>
-    </div>
   </div>
 </div>
-
-{% endblock %}
-
-{% block scripts %}
-{{ block.super }}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
-<script>
-  $(document).ready(function() {
-    // Retrieve party vote data from the server
-    var partyVotesData = {
-      // Add your code to fetch the data from the server and structure it properly
-      // Example structure: [{ label: 'Party A', votes: 100 }, { label: 'Party B', votes: 200 }]
-       
-    };
-
-    // Create the party votes chart
-    var partyVotesChart = new Chart(document.getElementById('partyVotesChart'), {
-      type: 'bar',
-      data: {
-        labels: partyVotesData.map(item => item.label),
-        datasets: [{
-          label: 'Votes',
-          data: partyVotesData.map(item => item.votes),
-          backgroundColor: 'rgba(75, 192, 192, 0.8)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  });
-</script>
 {% endblock %}
