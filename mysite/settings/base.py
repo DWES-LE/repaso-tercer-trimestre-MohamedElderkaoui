@@ -50,8 +50,6 @@ INSTALLED_APPS = [
     "persona",
     "futbol",
      "politica",
-      'bakery',
-    'wagtailbakery',
 ]
 
 MIDDLEWARE = [
@@ -172,19 +170,8 @@ WAGTAILSEARCH_BACKENDS = {
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
 
-
 BAKERY_MULTISITE = True
 
-BUILD_DIR = '/tmp/build/'
-
 BAKERY_VIEWS = (
-	'wagtailbakery.views.AllPublishedPagesView',
-)
-BAKERY_VIEWS = (
-	'wagtailbakery.views.AllPagesView',
-)
-BAKERY_VIEWS = (
-	'wagtailbakery.api_views.PagesAPIDetailView',
-	'wagtailbakery.api_views.PagesAPIListingView',
-	'wagtailbakery.api_views.TypedPagesAPIListingView',
+    'wagtailbakery.views.AllPublishedPagesView',
 )

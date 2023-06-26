@@ -7,19 +7,21 @@ try:
 except ImportError:
     pass
 
+# production.py
 
+# Import common settings from base.py
+from .base import *
+
+# Set specific production settings
+# ...
+
+# Enable multisite
 BAKERY_MULTISITE = True
 
-BUILD_DIR = '/tmp/build/'
-
+# ...
 BAKERY_VIEWS = (
-	'wagtailbakery.views.AllPublishedPagesView',
-)
-BAKERY_VIEWS = (
-	'wagtailbakery.views.AllPagesView',
-)
-BAKERY_VIEWS = (
-	'wagtailbakery.api_views.PagesAPIDetailView',
-	'wagtailbakery.api_views.PagesAPIListingView',
-	'wagtailbakery.api_views.TypedPagesAPIListingView',
+    'wagtailbakery.views.AllPublishedPagesView',
+    'wagtailbakery.api_views.PagesAPIDetailView',
+    'wagtailbakery.api_views.PagesAPIListingView',
+    'wagtailbakery.api_views.TypedPagesAPIListingView',
 )
