@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+  <div class="container">
+    <h1>Entrenador Index Page</h1>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Entrenadores</h5>
+        <ul class="list-group">
+          {% for subpage in page.get_children %}
+            {% if subpage.specific_class_name == 'entrenador' %}
+              <li class="list-group-item">
+                <a href="{{ subpage.url }}">{{ subpage.nombre }} {{ subpage.apellido }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
